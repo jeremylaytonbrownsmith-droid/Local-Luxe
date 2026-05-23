@@ -87,14 +87,14 @@ a { color: inherit; text-decoration: none; }
   line-height: 1;
   letter-spacing: -0.02em;
 }
-.lm-l1, .lm-c { color: #16477C; }
+.lm-l1, .lm-c { color: #1d4e6b; }
 .lm-l2 { color: #2e8b7a; }
 
 .logo-text-main {
   font-family: 'Raleway', sans-serif;
   font-size: 16px;
   font-weight: 700;
-  color: #16477C;
+  color: #1d4e6b;
   letter-spacing: 0.12em;
   line-height: 1.2;
 }
@@ -130,6 +130,16 @@ a { color: inherit; text-decoration: none; }
 
 .main-nav a:hover { color: #2e8b7a; }
 .main-nav .arrow { font-size: 10px; }
+
+.nav-portal-btn {
+  background: #16477C !important;
+  color: #fff !important;
+  padding: 8px 18px !important;
+  border-radius: 4px !important;
+  font-size: 11px !important;
+  transition: background 0.2s !important;
+}
+.nav-portal-btn:hover { background: #0f3360 !important; color: #fff !important; }
 
 /* ============ HERO ============ */
 .hero {
