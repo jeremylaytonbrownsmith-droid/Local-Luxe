@@ -87,8 +87,7 @@ a { color: inherit; text-decoration: none; }
   line-height: 1;
   letter-spacing: -0.02em;
 }
-.lm-l1, .lm-c { color: #1d4e6b; }
-.lm-l2 { color: #2e8b7a; }
+.lm-l1, .lm-l2, .lm-c { color: #2e8b7a; }
 
 .logo-text-main {
   font-family: 'Raleway', sans-serif;
