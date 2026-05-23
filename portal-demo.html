@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Local Luxe Concierge — Client Portal Demo</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600;700&family=Allura&display=swap" rel="stylesheet"/>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --navy:#16477C;
+    --navy-deep:#0f3360;
+    --teal:#2e8b7a;
+    --gold:#c5a74e;
+    --gold-bright:#d4b85e;
+    --cream:#f5f3ee;
+    --gray-50:#fafbfc;
+    --gray-100:#f7f8fa;
+    --gray-200:#e8ecf1;
+    --gray-300:#d0d6df;
+    --gray-500:#7a8593;
+    --gray-700:#3a4452;
+    --green:#22c55e;
+    --green-bg:#dcfce7;
+    --red:#ef4444;
+    --yellow:#f59e0b;
+    --yellow-bg:#fef3c7;
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:'Raleway',sans-serif;background:var(--gray-100);color:var(--gray-700);line-height:1.5;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+
+  /* ============ DEMO NAV ============ */
+  .demo-nav{
+    position:fixed;top:0;left:0;right:0;z-index:1000;
+    background:#0a1929;padding:10px 24px;
+    display:flex;align-items:center;gap:14px;
+    border-bottom:1px solid rgba(197,167,78,0.3);
+  }
+  .demo-nav-label{font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);white-space:nowrap;}
+  .demo-nav-buttons{display:flex;gap:6px;flex-wrap:wrap;}
+  .demo-btn{
+    background:transparent;border:1px solid rgba(255,255,255,0.2);
+    color:rgba(255,255,255,0.7);padding:6px 12px;font-size:10px;font-weight:600;
+    letter-spacing:0.08em;text-transform:uppercase;border-radius:4px;cursor:pointer;
+    font-family:'Raleway',sans-serif;transition:all 0.2s;
+  }
+  .demo-btn:hover{border-color:var(--gold);color:var(--gold);}
+  .demo-btn.active{background:var(--gold);border-color:var(--gold);color:#0a1929;}
+  .demo-tag{margin-left:auto;font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:0.1em;text-transform:uppercase;}
+
+  .page-container{padding-top:54px;min-height:100vh;}
+  .page{display:none;}
+  .page.active{display:block;animation:fadeIn 0.4s ease;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
+  /* ============ LOGIN PAGE ============ */
+  .login-page{
+    min-height:calc(100vh - 54px);
+    background:linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+    position:relative;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;padding:40px 20px;
+  }
+  .login-page::before{
+    content:'';position:absolute;top:-200px;right:-200px;
+    width:600px;height:600px;border-radius:50%;
+    border:1px solid rgba(197,167,78,0.1);
+  }
+  .login-page::after{
+    content:'';position:absolute;bottom:-300px;left:-300px;
+    width:800px;height:800px;border-radius:50%;
+    border:1px solid rgba(197,167,78,0.06);
+  }
+  .login-marsh{
+    position:absolute;inset:0;
+    background:url('https://static.wixstatic.com/media/6096ed_a7ab6d495f8e412d9591d84842b7b2c7~mv2.webp') center/cover no-repeat;
+    opacity:0.08;
+  }
+
+  .login-card{
+    background:#fff;border-radius:16px;
+    max-width:440px;width:100%;
+    padding:48px 44px;position:relative;z-index:2;
+    box-shadow:0 24px 80px rgba(0,0,0,0.4);
+  }
+
+  .login-brand{text-align:center;margin-bottom:32px;}
+  .login-brand-mark{
+    font-family:'Playfair Display',serif;font-size:48px;font-weight:700;
+    line-height:1;display:inline-flex;gap:1px;
+  }
+  .login-brand-mark .ll{color:var(--navy);}
+  .login-brand-mark .c{color:var(--gold);}
+  .login-brand-name{
+    font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;
+    color:var(--navy);letter-spacing:0.22em;margin-top:6px;
+  }
+  .login-brand-sub{font-size:10px;color:var(--gray-500);letter-spacing:0.3em;margin-top:3px;}
+
+  .login-greeting{text-align:center;margin-bottom:32px;}
+  .login-greeting-script{font-family:'Allura',cursive;font-size:36px;color:var(--gold);line-height:1;margin-bottom:4px;}
+  .login-greeting h1{font-family:'Playfair Display',serif;font-size:26px;font-weight:400;color:var(--navy);}
+  .login-greeting p{font-size:13px;color:var(--gray-500);margin-top:8px;}
+
+  .form-field{margin-bottom:16px;}
+  .form-field label{display:block;font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-700);margin-bottom:8px;}
+  .form-field input{
+    width:100%;border:1.5px solid var(--gray-200);background:var(--gray-50);
+    padding:13px 16px;font-family:'Raleway',sans-serif;font-size:14px;color:var(--gray-700);
+    outline:none;transition:all 0.2s;border-radius:8px;
+  }
+  .form-field input:focus{border-color:var(--navy);background:#fff;}
+
+  .form-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;font-size:12px;}
+  .form-row label{display:flex;align-items:center;gap:6px;color:var(--gray-500);cursor:pointer;}
+  .form-row a{color:var(--navy);font-weight:600;}
+
+  .btn-primary{
+    width:100%;background:var(--navy);color:#fff;border:none;
+    padding:14px;font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;
+    letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;border-radius:8px;
+    transition:background 0.2s;
+  }
+  .btn-primary:hover{background:var(--navy-deep);}
+
+  .divider{display:flex;align-items:center;gap:14px;margin:20px 0;color:var(--gray-500);font-size:10px;letter-spacing:0.1em;}
+  .divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--gray-200);}
+
+  .btn-google{
+    width:100%;background:#fff;color:var(--gray-700);border:1.5px solid var(--gray-200);
+    padding:12px;font-family:'Raleway',sans-serif;font-size:13px;font-weight:600;cursor:pointer;
+    border-radius:8px;display:flex;align-items:center;justify-content:center;gap:10px;
+    transition:border-color 0.2s;
+  }
+  .btn-google:hover{border-color:var(--gray-300);}
+  .google-icon{width:18px;height:18px;}
+
+  .login-footer{margin-top:28px;text-align:center;font-size:12px;color:var(--gray-500);}
+  .login-footer a{color:var(--navy);font-weight:600;}
+
+  .firebase-tag{
+    position:fixed;bottom:20px;right:20px;display:flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,0.95);border:1px solid var(--gray-200);
+    padding:6px 12px;border-radius:20px;font-size:10px;color:var(--gray-500);
+    letter-spacing:0.1em;text-transform:uppercase;font-weight:600;z-index:50;
+  }
+  .firebase-tag svg{width:14px;height:14px;}
+
+  /* ============ MOBILE-FIRST CLIENT VIEW ============ */
+  .client-shell{
+    max-width:440px;margin:20px auto;background:#fff;
+    border-radius:24px;overflow:hidden;box-shadow:0 8px 40px rgba(22,71,124,0.12);
+    min-height:780px;position:relative;
+  }
+  .phone-frame-note{
+    text-align:center;font-size:11px;color:var(--gray-500);letter-spacing:0.1em;
+    text-transform:uppercase;font-weight:600;margin:24px 0 8px;
+  }
+
+  .client-header{
+    background:linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+    padding:28px 24px 60px;color:#fff;position:relative;overflow:hidden;
+  }
+  .client-header::before{
+    content:'';position:absolute;top:-80px;right:-80px;
+    width:240px;height:240px;border-radius:50%;
+    border:1px solid rgba(197,167,78,0.2);
+  }
+  .ch-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;position:relative;z-index:2;}
+  .ch-greeting{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:2px;}
+  .ch-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:500;}
+  .ch-name span{font-family:'Allura',cursive;color:var(--gold);font-size:24px;}
+  .ch-avatar{
+    width:42px;height:42px;border-radius:50%;background:var(--gold);
+    color:var(--navy);font-weight:700;display:flex;align-items:center;justify-content:center;
+    font-size:14px;font-family:'Raleway',sans-serif;
+  }
+
+  .ch-property{position:relative;z-index:2;}
+  .ch-property-label{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;font-weight:600;}
+  .ch-property-addr{font-family:'Playfair Display',serif;font-size:19px;color:#fff;}
+  .ch-property-city{font-size:12px;color:rgba(255,255,255,0.6);margin-top:2px;}
+
+  .status-pill{
+    margin:-30px 24px 0;background:#fff;border-radius:14px;padding:20px;
+    box-shadow:0 8px 24px rgba(22,71,124,0.1);position:relative;z-index:5;
+  }
+  .sp-row{display:flex;align-items:center;gap:14px;}
+  .sp-icon{
+    width:48px;height:48px;border-radius:50%;background:var(--green-bg);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .sp-icon svg{width:24px;height:24px;stroke:var(--green);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;}
+  .sp-body{flex:1;min-width:0;}
+  .sp-status{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);font-weight:500;line-height:1.2;margin-bottom:3px;}
+  .sp-date{font-size:11px;color:var(--gray-500);letter-spacing:0.05em;}
+  .sp-arrow{color:var(--gray-300);}
+
+  .client-section{padding:24px;}
+  .cs-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+  .cs-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:500;color:var(--navy);}
+  .cs-link{color:var(--gold);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;}
+
+  .next-visit{background:var(--cream);border-left:4px solid var(--gold);padding:18px 20px;border-radius:8px;}
+  .nv-label{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:6px;}
+  .nv-date{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);font-weight:500;margin-bottom:3px;}
+  .nv-meta{font-size:12px;color:var(--gray-500);}
+
+  .v-item{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--gray-200);cursor:pointer;}
+  .v-item:last-child{border-bottom:none;}
+  .v-date{flex-shrink:0;width:46px;text-align:center;background:var(--cream);border-radius:8px;padding:6px 0;}
+  .v-date-day{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--navy);line-height:1;}
+  .v-date-mo{font-size:9px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-500);margin-top:3px;}
+  .v-body{flex:1;min-width:0;}
+  .v-title{font-size:13px;font-weight:600;color:var(--gray-700);margin-bottom:2px;}
+  .v-meta{font-size:11px;color:var(--gray-500);}
+  .v-badge{flex-shrink:0;padding:4px 8px;font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;border-radius:12px;}
+  .vb-clear{background:var(--green-bg);color:#15803d;}
+  .vb-attn{background:var(--yellow-bg);color:#a16207;}
+
+  .qa-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .qa-card{
+    background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:16px;
+    cursor:pointer;transition:all 0.2s;text-align:left;font-family:'Raleway',sans-serif;
+  }
+  .qa-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 4px 16px rgba(197,167,78,0.12);}
+  .qa-icon{width:34px;height:34px;border-radius:8px;background:var(--cream);display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
+  .qa-icon svg{width:17px;height:17px;stroke:var(--gold);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+  .qa-title{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:2px;}
+  .qa-sub{font-size:10px;color:var(--gray-500);line-height:1.3;}
+
+  .bottom-nav{background:#fff;border-top:1px solid var(--gray-200);display:flex;justify-content:space-around;padding:10px 0;position:sticky;bottom:0;}
+  .bn-item{display:flex;flex-direction:column;align-items:center;gap:4px;padding:4px 12px;cursor:pointer;font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray-500);}
+  .bn-item svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+  .bn-item.active{color:var(--navy);}
+  .bn-item.active svg{stroke:var(--navy);}
+
+  /* ============ VISIT REPORT ============ */
+  .vr-header{background:linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);padding:24px;color:#fff;}
+  .vr-back{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,0.7);cursor:pointer;margin-bottom:20px;}
+  .vr-back svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+  .vr-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:500;margin-bottom:8px;}
+  .vr-meta{font-size:12px;color:rgba(255,255,255,0.7);line-height:1.6;}
+  .vr-meta strong{color:#fff;}
+  .vr-status-pill{display:inline-flex;align-items:center;gap:6px;background:var(--green-bg);color:#15803d;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-top:14px;}
+
+  .vr-section{padding:24px;background:#fff;border-bottom:1px solid var(--gray-200);}
+  .vr-section h3{font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--navy);margin-bottom:14px;}
+
+  .vr-photos{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .vr-photo{aspect-ratio:1;border-radius:8px;background-size:cover;background-position:center;}
+  .vrp-1{background-image:url('https://static.wixstatic.com/media/b61df5_404f710af52740f894591ee1ef6ea924~mv2.avif');}
+  .vrp-2{background-image:url('https://static.wixstatic.com/media/6096ed_a7ab6d495f8e412d9591d84842b7b2c7~mv2.webp');}
+  .vrp-3{background-image:url('https://static.wixstatic.com/media/b61df5_d779a36c5bcd4bea8cd52d33754fc9c3~mv2.avif');}
+  .vrp-4{background-image:url('https://static.wixstatic.com/media/b61df5_1ed7af07b9c1450582f1a53f9c78f000~mv2.avif');}
+  .vr-photo-count{text-align:center;font-size:11px;color:var(--gray-500);margin-top:10px;font-weight:600;letter-spacing:0.05em;}
+
+  .vr-check{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--gray-200);font-size:13px;}
+  .vr-check:last-child{border-bottom:none;}
+  .vrc-icon{width:24px;height:24px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+  .vrc-good{background:var(--green);}
+  .vrc-alert{background:var(--yellow);}
+  .vrc-icon svg{width:13px;height:13px;stroke:#fff;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;}
+  .vrc-label{flex:1;color:var(--gray-700);font-weight:500;}
+  .vrc-label small{color:var(--yellow);font-weight:600;}
+
+  .vr-note{background:var(--cream);border-radius:12px;padding:18px 20px;margin-top:8px;}
+  .vr-note-label{font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+  .vr-note p{font-family:'Playfair Display',serif;font-size:14px;font-style:italic;color:var(--gray-700);line-height:1.6;}
+  .vr-note-sig{margin-top:12px;display:flex;align-items:center;gap:8px;}
+  .vr-note-avatar{width:28px;height:28px;border-radius:50%;background:var(--gold);color:var(--navy);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:10px;}
+  .vr-note-name{font-size:11px;color:var(--gray-500);}
+  .vr-note-name strong{color:var(--gray-700);}
+
+  /* ============ ADMIN VIEW ============ */
+  .admin-shell{max-width:1280px;margin:20px auto;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 8px 40px rgba(22,71,124,0.1);}
+  .admin-banner{background:var(--cream);padding:14px 24px;border-bottom:1px solid var(--gray-200);display:flex;align-items:center;gap:10px;}
+  .admin-banner-icon{width:28px;height:28px;border-radius:6px;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .admin-banner-icon svg{width:15px;height:15px;stroke:var(--navy);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+  .admin-banner-text{font-size:12px;color:var(--gray-700);}
+  .admin-banner-text strong{color:var(--navy);}
+
+  .admin-layout{display:grid;grid-template-columns:240px 1fr;min-height:680px;}
+  .admin-sidebar{background:var(--navy);color:#fff;padding:24px 0;}
+  .admin-sidebar-logo{padding:0 24px 20px;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(255,255,255,0.1);}
+  .as-mark{background:var(--gold);color:var(--navy);width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;font-weight:700;}
+  .as-name{font-family:'Playfair Display',serif;font-size:14px;font-weight:500;line-height:1.2;}
+  .as-name span{display:block;font-size:8px;letter-spacing:0.25em;color:rgba(255,255,255,0.5);margin-top:2px;font-family:'Raleway',sans-serif;}
+
+  .as-section{padding:16px 0;}
+  .as-section-label{padding:0 24px 10px;font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.4);}
+  .as-link{display:flex;align-items:center;gap:11px;padding:10px 24px;font-size:12px;font-weight:500;color:rgba(255,255,255,0.7);border-left:3px solid transparent;cursor:pointer;transition:all 0.2s;}
+  .as-link:hover{background:rgba(255,255,255,0.05);color:#fff;}
+  .as-link.active{background:rgba(255,255,255,0.08);border-left-color:var(--gold);color:#fff;}
+  .as-link svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+  .as-badge{margin-left:auto;background:var(--red);color:#fff;font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;}
+
+  .admin-main{padding:28px 32px;overflow-y:auto;}
+  .admin-page-head{margin-bottom:24px;}
+  .admin-page-eyebrow{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gray-500);margin-bottom:4px;font-weight:600;}
+  .admin-page-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:500;color:var(--navy);}
+
+  .clients-table{background:#fff;border:1px solid var(--gray-200);border-radius:12px;overflow:hidden;}
+  .ct-head{display:grid;grid-template-columns:2fr 1.5fr 1fr 1fr 1fr;gap:16px;padding:14px 20px;background:var(--gray-100);border-bottom:1px solid var(--gray-200);font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gray-500);}
+  .ct-row{display:grid;grid-template-columns:2fr 1.5fr 1fr 1fr 1fr;gap:16px;padding:16px 20px;border-bottom:1px solid var(--gray-200);align-items:center;cursor:pointer;transition:background 0.15s;}
+  .ct-row:hover{background:var(--gray-50);}
+  .ct-row:last-child{border-bottom:none;}
+  .ct-client{display:flex;align-items:center;gap:12px;}
+  .ct-avatar{width:36px;height:36px;border-radius:50%;background:var(--cream);color:var(--navy);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;}
+  .ct-name{font-size:13px;font-weight:600;color:var(--gray-700);}
+  .ct-email{font-size:11px;color:var(--gray-500);}
+  .ct-prop{font-size:12px;color:var(--gray-700);}
+  .ct-city{font-size:11px;color:var(--gray-500);}
+  .ct-status{font-size:11px;font-weight:700;padding:4px 10px;border-radius:12px;text-align:center;letter-spacing:0.08em;text-transform:uppercase;display:inline-block;}
+  .cts-clear{background:var(--green-bg);color:#15803d;}
+  .cts-attn{background:var(--yellow-bg);color:#a16207;}
+
+  .admin-cta-row{display:flex;gap:12px;margin-bottom:20px;}
+  .ac-btn{background:var(--navy);color:#fff;border:none;padding:11px 20px;border-radius:8px;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;font-family:'Raleway',sans-serif;display:flex;align-items:center;gap:8px;}
+  .ac-btn.outline{background:#fff;color:var(--navy);border:1.5px solid var(--gray-200);}
+  .ac-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+  .admin-search{flex:1;border:1.5px solid var(--gray-200);background:#fff;padding:11px 16px;border-radius:8px;font-size:13px;outline:none;font-family:'Raleway',sans-serif;}
+
+  @media (max-width:1024px){
+    .admin-layout{grid-template-columns:1fr;}
+    .admin-sidebar{display:none;}
+    .ct-head,.ct-row{grid-template-columns:2fr 1fr 1fr;}
+    .ct-head .col-hide,.ct-row .col-hide{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-nav">
+  <div class="demo-nav-label">Client Portal:</div>
+  <div class="demo-nav-buttons">
+    <button class="demo-btn active" onclick="showPage('login')">1. Client Login</button>
+    <button class="demo-btn" onclick="showPage('home')">2. Client Home</button>
+    <button class="demo-btn" onclick="showPage('visit')">3. Visit Report</button>
+    <button class="demo-btn" onclick="showPage('admin')">4. Admin View</button>
+  </div>
+  <div class="demo-tag">What your homeowners see</div>
+</div>
+
+<div class="page-container">
+
+  <!-- PAGE 1: LOGIN -->
+  <div class="page active" id="page-login">
+    <div class="login-page">
+      <div class="login-marsh"></div>
+      <div class="login-card">
+        <div class="login-brand">
+          <div class="login-brand-mark"><span class="ll">LL</span><span class="c">C</span></div>
+          <div class="login-brand-name">LOCAL LUXE</div>
+          <div class="login-brand-sub">CONCIERGE</div>
+        </div>
+        <div class="login-greeting">
+          <div class="login-greeting-script">welcome back</div>
+          <h1>Your home, in your hands.</h1>
+          <p>Sign in to view your latest visit, request services, and stay connected.</p>
+        </div>
+        <div class="form-field">
+          <label>Email address</label>
+          <input type="email" placeholder="you@email.com" value="thompson.family@email.com"/>
+        </div>
+        <div class="form-field">
+          <label>Password</label>
+          <input type="password" placeholder="Enter your password" value="••••••••••"/>
+        </div>
+        <div class="form-row">
+          <label><input type="checkbox" checked/> Remember me</label>
+          <a href="#">Forgot password?</a>
+        </div>
+        <button class="btn-primary" onclick="showPage('home')">Sign In →</button>
+        <div class="divider">OR</div>
+        <button class="btn-google" onclick="showPage('home')">
+          <svg class="google-icon" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+          </svg>
+          Continue with Google
+        </button>
+        <div class="login-footer">New client? <a href="#">Contact us to get set up</a></div>
+      </div>
+      <div class="firebase-tag">
+        <svg viewBox="0 0 24 24" fill="#FFA000"><path d="M3.89 15.673L6.255.461A.542.542 0 0 1 7.27.288l2.543 4.771zm16.794 3.692l-2.25-14a.54.54 0 0 0-.919-.295L3.316 19.365l7.856 4.427a1.621 1.621 0 0 0 1.588 0zM14.3 7.148l-1.82-3.482a.542.542 0 0 0-.96 0L3.53 17.984z"/></svg>
+        Secured by Firebase Auth
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 2: CLIENT HOME -->
+  <div class="page" id="page-home">
+    <div class="phone-frame-note">📱 Client View · Optimized for mobile</div>
+    <div class="client-shell">
+      <header class="client-header">
+        <div class="ch-top">
+          <div>
+            <div class="ch-greeting">Welcome back</div>
+            <div class="ch-name">Hello, <span>Margaret</span></div>
+          </div>
+          <div class="ch-avatar">MT</div>
+        </div>
+        <div class="ch-property">
+          <div class="ch-property-label">Your Property</div>
+          <div class="ch-property-addr">142 Marsh Crossing</div>
+          <div class="ch-property-city">Bluffton, SC 29910</div>
+        </div>
+      </header>
+      <div class="status-pill" onclick="showPage('visit')" style="cursor:pointer;">
+        <div class="sp-row">
+          <div class="sp-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="sp-body">
+            <div class="sp-status">All Clear</div>
+            <div class="sp-date">Last visit · Wed, May 20 · 9:14 AM</div>
+          </div>
+          <div class="sp-arrow">›</div>
+        </div>
+      </div>
+      <section class="client-section">
+        <div class="cs-heading"><div class="cs-title">Next Visit</div></div>
+        <div class="next-visit">
+          <div class="nv-label">Scheduled</div>
+          <div class="nv-date">Tuesday, June 3</div>
+          <div class="nv-meta">9:00 – 10:30 AM · Lauren T.</div>
+        </div>
+      </section>
+      <section class="client-section" style="padding-top:8px;">
+        <div class="cs-heading">
+          <div class="cs-title">Recent Visits</div>
+          <a class="cs-link">View All</a>
+        </div>
+        <div>
+          <div class="v-item" onclick="showPage('visit')">
+            <div class="v-date"><div class="v-date-day">20</div><div class="v-date-mo">May</div></div>
+            <div class="v-body"><div class="v-title">Routine Inspection</div><div class="v-meta">42 photos · Lauren T.</div></div>
+            <div class="v-badge vb-clear">Clear</div>
+          </div>
+          <div class="v-item">
+            <div class="v-date"><div class="v-date-day">13</div><div class="v-date-mo">May</div></div>
+            <div class="v-body"><div class="v-title">Storm Prep Check</div><div class="v-meta">38 photos · Danny T.</div></div>
+            <div class="v-badge vb-clear">Clear</div>
+          </div>
+          <div class="v-item">
+            <div class="v-date"><div class="v-date-day">06</div><div class="v-date-mo">May</div></div>
+            <div class="v-body"><div class="v-title">Routine Inspection</div><div class="v-meta">HVAC noise reported</div></div>
+            <div class="v-badge vb-attn">Attn</div>
+          </div>
+        </div>
+      </section>
+      <section class="client-section" style="padding-top:8px;">
+        <div class="cs-heading"><div class="cs-title">Quick Actions</div></div>
+        <div class="qa-grid">
+          <button class="qa-card"><div class="qa-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div><div class="qa-title">New Request</div><div class="qa-sub">Errand or special ask</div></button>
+          <button class="qa-card"><div class="qa-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg></div><div class="qa-title">Add Visit</div><div class="qa-sub">Extra check-in</div></button>
+          <button class="qa-card"><div class="qa-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div class="qa-title">Message Team</div><div class="qa-sub">Chat with Danny</div></button>
+          <button class="qa-card"><div class="qa-icon"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div><div class="qa-title">Alerts</div><div class="qa-sub">Visit notifications</div></button>
+        </div>
+      </section>
+      <nav class="bottom-nav">
+        <div class="bn-item active"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</div>
+        <div class="bn-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Visits</div>
+        <div class="bn-item"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Request</div>
+        <div class="bn-item"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Chat</div>
+        <div class="bn-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Settings</div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- PAGE 3: VISIT REPORT -->
+  <div class="page" id="page-visit">
+    <div class="phone-frame-note">📱 Detailed Visit Report</div>
+    <div class="client-shell">
+      <header class="vr-header">
+        <div class="vr-back" onclick="showPage('home')"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back to home</div>
+        <div class="vr-title">Routine Inspection</div>
+        <div class="vr-meta"><strong>Wednesday, May 20, 2026</strong><br>9:14 AM – 10:48 AM · Lauren T.</div>
+        <div class="vr-status-pill"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>All Clear</div>
+      </header>
+      <section class="vr-section">
+        <h3>Photos (42 total)</h3>
+        <div class="vr-photos">
+          <div class="vr-photo vrp-1"></div>
+          <div class="vr-photo vrp-2"></div>
+          <div class="vr-photo vrp-3"></div>
+          <div class="vr-photo vrp-4"></div>
+        </div>
+        <div class="vr-photo-count">+ 38 more · Tap to view gallery</div>
+      </section>
+      <section class="vr-section">
+        <h3>23-Point Inspection</h3>
+        <div class="vr-check"><div class="vrc-icon vrc-good"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="vrc-label">Exterior &amp; landscape</div></div>
+        <div class="vr-check"><div class="vrc-icon vrc-good"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="vrc-label">Roof &amp; gutters</div></div>
+        <div class="vr-check"><div class="vrc-icon vrc-good"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="vrc-label">HVAC system</div></div>
+        <div class="vr-check"><div class="vrc-icon vrc-good"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="vrc-label">Plumbing &amp; water</div></div>
+        <div class="vr-check"><div class="vrc-icon vrc-alert"><svg viewBox="0 0 24 24"><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><div class="vrc-label">Pool equipment <small>· minor noise</small></div></div>
+        <div class="vr-check"><div class="vrc-icon vrc-good"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="vrc-label">Electrical &amp; breakers</div></div>
+        <div class="vr-check"><div class="vrc-icon vrc-good"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="vrc-label">Security &amp; alarms</div></div>
+      </section>
+      <section class="vr-section">
+        <h3>Notes From Your Concierge</h3>
+        <div class="vr-note">
+          <div class="vr-note-label">Personal Note</div>
+          <p>"Everything looks great this week, Margaret. The pool pump is making a slight noise — I'll have Marcus from Tideway come look on Friday. He's already booked. Mail collected and on the kitchen counter. The lavender by the back patio is starting to bloom — looks beautiful!"</p>
+          <div class="vr-note-sig">
+            <div class="vr-note-avatar">LT</div>
+            <div class="vr-note-name"><strong>Lauren Thornberry</strong> · 10:48 AM</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- PAGE 4: ADMIN VIEW -->
+  <div class="page" id="page-admin">
+    <div class="admin-shell">
+      <div class="admin-banner">
+        <div class="admin-banner-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div class="admin-banner-text"><strong>Admin View</strong> — This is what Danny &amp; Lauren see when they log in. Manage all clients from one dashboard.</div>
+      </div>
+      <div class="admin-layout">
+        <aside class="admin-sidebar">
+          <div class="admin-sidebar-logo">
+            <div class="as-mark">L</div>
+            <div class="as-name">Local Luxe<span>ADMIN PORTAL</span></div>
+          </div>
+          <div class="as-section">
+            <div class="as-section-label">Manage</div>
+            <div class="as-link active"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Clients<span class="as-badge">14</span></div>
+            <div class="as-link"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>Schedule</div>
+            <div class="as-link"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Visits</div>
+            <div class="as-link"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Requests<span class="as-badge">3</span></div>
+            <div class="as-link"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Messages<span class="as-badge">5</span></div>
+          </div>
+          <div class="as-section">
+            <div class="as-section-label">Business</div>
+            <div class="as-link"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Billing</div>
+            <div class="as-link"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>Reports</div>
+            <div class="as-link"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Settings</div>
+          </div>
+        </aside>
+        <main class="admin-main">
+          <div class="admin-page-head">
+            <div class="admin-page-eyebrow">Wednesday, May 22</div>
+            <h1 class="admin-page-title">All Clients</h1>
+          </div>
+          <div class="admin-cta-row">
+            <input class="admin-search" placeholder="Search by name, address, or community..."/>
+            <button class="ac-btn outline"><svg viewBox="0 0 24 24"><path d="M3 6h18M6 12h12M10 18h4"/></svg>Filter</button>
+            <button class="ac-btn"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Add Client</button>
+          </div>
+          <div class="clients-table">
+            <div class="ct-head"><div>Client</div><div>Property</div><div class="col-hide">Last Visit</div><div class="col-hide">Plan</div><div>Status</div></div>
+            <div class="ct-row"><div class="ct-client"><div class="ct-avatar">MT</div><div><div class="ct-name">Margaret Thompson</div><div class="ct-email">thompson.family@email.com</div></div></div><div><div class="ct-prop">142 Marsh Crossing</div><div class="ct-city">Bluffton, SC</div></div><div class="col-hide"><div class="ct-prop">May 20</div><div class="ct-city">2 days ago</div></div><div class="col-hide"><div class="ct-prop">Bi-Weekly</div><div class="ct-city">$280/mo</div></div><div><span class="ct-status cts-clear">All Clear</span></div></div>
+            <div class="ct-row"><div class="ct-client"><div class="ct-avatar">RH</div><div><div class="ct-name">Robert &amp; Helen Bishop</div><div class="ct-email">rbishop@email.com</div></div></div><div><div class="ct-prop">28 Wexford Plantation</div><div class="ct-city">Hilton Head, SC</div></div><div class="col-hide"><div class="ct-prop">May 19</div><div class="ct-city">3 days ago</div></div><div class="col-hide"><div class="ct-prop">Weekly</div><div class="ct-city">$520/mo</div></div><div><span class="ct-status cts-clear">All Clear</span></div></div>
+            <div class="ct-row"><div class="ct-client"><div class="ct-avatar">JK</div><div><div class="ct-name">James Kowalski</div><div class="ct-email">jkowalski@email.com</div></div></div><div><div class="ct-prop">7 Palmetto Bluff Dr</div><div class="ct-city">Bluffton, SC</div></div><div class="col-hide"><div class="ct-prop">May 18</div><div class="ct-city">4 days ago</div></div><div class="col-hide"><div class="ct-prop">Bi-Weekly</div><div class="ct-city">$320/mo</div></div><div><span class="ct-status cts-attn">Pool Issue</span></div></div>
+            <div class="ct-row"><div class="ct-client"><div class="ct-avatar">SC</div><div><div class="ct-name">Sarah Chen</div><div class="ct-email">sarah.chen@email.com</div></div></div><div><div class="ct-prop">191 Old Carolina Rd</div><div class="ct-city">Beaufort, SC</div></div><div class="col-hide"><div class="ct-prop">May 17</div><div class="ct-city">5 days ago</div></div><div class="col-hide"><div class="ct-prop">Weekly</div><div class="ct-city">$480/mo</div></div><div><span class="ct-status cts-clear">All Clear</span></div></div>
+            <div class="ct-row"><div class="ct-client"><div class="ct-avatar">DM</div><div><div class="ct-name">David &amp; Linda Morrison</div><div class="ct-email">dmorrison@email.com</div></div></div><div><div class="ct-prop">54 Sea Pines Cir</div><div class="ct-city">Hilton Head, SC</div></div><div class="col-hide"><div class="ct-prop">May 15</div><div class="ct-city">7 days ago</div></div><div class="col-hide"><div class="ct-prop">Bi-Weekly</div><div class="ct-city">$300/mo</div></div><div><span class="ct-status cts-clear">All Clear</span></div></div>
+            <div class="ct-row"><div class="ct-client"><div class="ct-avatar">EW</div><div><div class="ct-name">Edward Whitfield</div><div class="ct-email">ewhitfield@email.com</div></div></div><div><div class="ct-prop">12 Okatie Bluff Rd</div><div class="ct-city">Okatie, SC</div></div><div class="col-hide"><div class="ct-prop">May 14</div><div class="ct-city">8 days ago</div></div><div class="col-hide"><div class="ct-prop">Monthly</div><div class="ct-city">$180/mo</div></div><div><span class="ct-status cts-clear">All Clear</span></div></div>
+          </div>
+          <div style="margin-top:20px;padding:16px 20px;background:var(--cream);border-left:4px solid var(--gold);border-radius:8px;font-size:13px;color:var(--gray-700);">
+            <strong style="color:var(--navy);">💡 Recurring revenue snapshot:</strong> 14 active clients · $4,360/mo MRR · $52,320 annual
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function showPage(name){
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    document.getElementById('page-'+name).classList.add('active');
+    document.querySelectorAll('.demo-btn').forEach(b=>b.classList.remove('active'));
+    const map={login:0,home:1,visit:2,admin:3};
+    document.querySelectorAll('.demo-btn')[map[name]].classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+</script>
+</body>
+</html>
