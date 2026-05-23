@@ -351,6 +351,18 @@
     .ct-head,.ct-row{grid-template-columns:2fr 1fr 1fr;}
     .ct-head .col-hide,.ct-row .col-hide{display:none;}
   }
+  @media (max-width:640px){
+    .admin-shell{margin:0;border-radius:0;}
+    .admin-main{padding:20px 16px;}
+    .admin-cta-row{flex-wrap:wrap;}
+    .admin-search{flex-basis:100%;min-width:0;}
+    .ct-head,.ct-row{grid-template-columns:1fr auto;gap:8px;}
+    .ct-head > div:nth-child(2),.ct-row > div:nth-child(2){display:none;}
+    .ct-client{gap:8px;}
+    .ct-avatar{width:30px;height:30px;font-size:10px;}
+    .ct-name{font-size:12px;}
+    .ct-status{font-size:10px;padding:4px 8px;}
+  }
 </style>
 </head>
 <body>
