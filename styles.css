@@ -1,9 +1,9 @@
 /* =========================================================
    Local Luxe Concierge — Homepage Styles
    Brand colors:
-     Navy:  #1d4e6b (primary), #1a4267 (deep navy)
+     Navy:  #16477C (primary), #0f3360 (deep navy)
      Teal:  #2e8b7a (logo accent)
-     Gold:  #b5a808 (accent)
+     Gold:  #c5a74e (accent)
      Cream: #f5f3ee (section bg)
      Gray:  #f2f2f2 (topbar)
    ========================================================= */
@@ -14,7 +14,7 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Raleway', sans-serif;
-  color: #1d4e6b;
+  color: #16477C;
   background: #fff;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -44,14 +44,14 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #2e6da4;
+  color: #16477C;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.02em;
   transition: color 0.2s;
 }
 
-.topbar-phone:hover { color: #1d4e6b; }
+.topbar-phone:hover { color: #16477C; }
 
 /* ============ HEADER / NAV ============ */
 .site-header {
@@ -87,14 +87,14 @@ a { color: inherit; text-decoration: none; }
   line-height: 1;
   letter-spacing: -0.02em;
 }
-.lm-l1, .lm-c { color: #1d4e6b; }
+.lm-l1, .lm-c { color: #16477C; }
 .lm-l2 { color: #2e8b7a; }
 
 .logo-text-main {
   font-family: 'Raleway', sans-serif;
   font-size: 16px;
   font-weight: 700;
-  color: #1d4e6b;
+  color: #16477C;
   letter-spacing: 0.12em;
   line-height: 1.2;
 }
@@ -116,7 +116,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .main-nav a {
-  color: #1d4e6b;
+  color: #16477C;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -136,7 +136,7 @@ a { color: inherit; text-decoration: none; }
   position: relative;
   width: 100%;
   height: 600px;
-  background: #1d4e6b; /* fallback */
+  background: #16477C; /* fallback */
   overflow: hidden;
 }
 
@@ -152,7 +152,7 @@ a { color: inherit; text-decoration: none; }
   position: absolute;
   left: 60px;
   bottom: 70px;
-  background: rgba(26, 66, 103, 0.88);
+  background: rgba(15, 51, 96, 0.88);
   padding: 44px 48px;
   max-width: 580px;
   color: #fff;
@@ -216,7 +216,7 @@ a { color: inherit; text-decoration: none; }
 
 .btn-outline-white-large:hover {
   background: #fff;
-  color: #1a4267;
+  color: #0f3360;
 }
 
 .arrow-right { font-size: 14px; }
@@ -237,7 +237,7 @@ a { color: inherit; text-decoration: none; }
 .script-label {
   font-family: 'Allura', cursive;
   font-size: 32px;
-  color: #b5a808;
+  color: #c5a74e;
   margin-bottom: 4px;
   line-height: 1;
 }
@@ -246,13 +246,13 @@ a { color: inherit; text-decoration: none; }
   font-family: 'Playfair Display', serif;
   font-size: 36px;
   font-weight: 400;
-  color: #1d4e6b;
+  color: #16477C;
   line-height: 1.2;
 }
 
 .mission-body p {
   font-size: 16px;
-  color: #1d4e6b;
+  color: #16477C;
   line-height: 1.85;
   margin-bottom: 22px;
 }
@@ -268,7 +268,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .hw-box {
-  border: 2px solid #2e6da4;
+  border: 2px solid #16477C;
   padding: 36px 44px;
   background: #fff;
 }
@@ -277,7 +277,7 @@ a { color: inherit; text-decoration: none; }
   font-family: 'Raleway', sans-serif;
   font-size: 18px;
   font-weight: 700;
-  color: #1d4e6b;
+  color: #16477C;
   margin-bottom: 20px;
 }
 
@@ -288,14 +288,14 @@ a { color: inherit; text-decoration: none; }
 
 .hw-bar {
   width: 5px;
-  background: #b5a808;
+  background: #c5a74e;
   border-radius: 2px;
   margin-right: 22px;
 }
 
 .hw-quote-content p {
   font-size: 17px;
-  color: #1d4e6b;
+  color: #16477C;
   line-height: 1.6;
   margin-bottom: 10px;
 }
@@ -365,7 +365,7 @@ a { color: inherit; text-decoration: none; }
   font-weight: 700;
   letter-spacing: 0.15em;
   background: #fff;
-  color: #1d4e6b;
+  color: #16477C;
   transition: all 0.2s;
 }
 
@@ -417,14 +417,14 @@ a { color: inherit; text-decoration: none; }
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.18em;
-  color: #1d4e6b;
+  color: #16477C;
   margin-bottom: 14px;
 }
 
 .value-rule {
   width: 44px;
   height: 2px;
-  background: #1d4e6b;
+  background: #16477C;
   margin-bottom: 20px;
 }
 
@@ -432,13 +432,13 @@ a { color: inherit; text-decoration: none; }
   font-family: 'Playfair Display', serif;
   font-size: 16px;
   font-style: italic;
-  color: #1d4e6b;
+  color: #16477C;
   line-height: 1.6;
 }
 
 /* ============ GET STARTED BANNER ============ */
 .get-started-banner {
-  background: #1a4267;
+  background: #0f3360;
   padding: 54px 0;
 }
 
@@ -452,7 +452,7 @@ a { color: inherit; text-decoration: none; }
 .script-label-gold {
   font-family: 'Allura', cursive;
   font-size: 30px;
-  color: #b5a808;
+  color: #c5a74e;
   line-height: 1;
   margin-bottom: 6px;
 }
@@ -490,7 +490,7 @@ a { color: inherit; text-decoration: none; }
   font-family: 'Playfair Display', serif;
   font-size: 36px;
   font-weight: 400;
-  color: #1d4e6b;
+  color: #16477C;
   margin-bottom: 36px;
 }
 
@@ -521,7 +521,7 @@ a { color: inherit; text-decoration: none; }
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: #1d4e6b;
+  border-color: #16477C;
 }
 
 .form-group textarea {
@@ -544,25 +544,25 @@ a { color: inherit; text-decoration: none; }
   transition: background 0.2s;
 }
 
-.submit-btn:hover { background: #1d4e6b; }
+.submit-btn:hover { background: #16477C; }
 
 .ci-heading {
   font-family: 'Playfair Display', serif;
   font-size: 28px;
   font-weight: 400;
-  color: #1d4e6b;
+  color: #16477C;
   margin-bottom: 4px;
 }
 
 .ci-text {
   font-size: 15px;
-  color: #1d4e6b;
+  color: #16477C;
   margin-bottom: 28px;
   line-height: 1.5;
 }
 
 .ci-text a {
-  color: #1d4e6b;
+  color: #16477C;
   font-weight: 500;
   transition: color 0.2s;
 }
@@ -610,7 +610,7 @@ a { color: inherit; text-decoration: none; }
 .footer-nav a {
   font-size: 12px;
   font-weight: 700;
-  color: #1d4e6b;
+  color: #16477C;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   transition: color 0.2s;
@@ -642,7 +642,7 @@ a { color: inherit; text-decoration: none; }
   display: block;
   width: 24px;
   height: 2px;
-  background: #1d4e6b;
+  background: #16477C;
   border-radius: 2px;
   transition: all 0.3s ease;
 }
@@ -653,7 +653,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ============ PAGE HERO (inner pages) ============ */
 .page-hero {
-  background: linear-gradient(160deg, #1d4e6b 0%, #1a4267 100%);
+  background: linear-gradient(160deg, #16477C 0%, #0f3360 100%);
   padding: 90px 40px 80px;
   text-align: center;
   color: #fff;
@@ -674,7 +674,7 @@ a { color: inherit; text-decoration: none; }
 .page-hero-script {
   font-family: 'Allura', cursive;
   font-size: 34px;
-  color: #b5a808;
+  color: #c5a74e;
   line-height: 1;
   margin-bottom: 10px;
 }
@@ -706,7 +706,7 @@ a { color: inherit; text-decoration: none; }
   font-family: 'Playfair Display', serif;
   font-size: 38px;
   font-weight: 400;
-  color: #1d4e6b;
+  color: #16477C;
   line-height: 1.2;
   margin-bottom: 16px;
 }
@@ -736,7 +736,7 @@ a { color: inherit; text-decoration: none; }
   height: 480px;
   border-radius: 4px;
   overflow: hidden;
-  background: #1d4e6b;
+  background: #16477C;
 }
 
 .intro-image img {
@@ -751,14 +751,14 @@ a { color: inherit; text-decoration: none; }
   font-family: 'Playfair Display', serif;
   font-size: 36px;
   font-weight: 400;
-  color: #1d4e6b;
+  color: #16477C;
   margin-bottom: 24px;
   line-height: 1.2;
 }
 
 .intro-body p {
   font-size: 16px;
-  color: #1d4e6b;
+  color: #16477C;
   line-height: 1.85;
   margin-bottom: 20px;
 }
@@ -788,7 +788,7 @@ a { color: inherit; text-decoration: none; }
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #1d4e6b;
+  background: #16477C;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -799,7 +799,7 @@ a { color: inherit; text-decoration: none; }
   font-family: 'Raleway', sans-serif;
   font-size: 13px;
   font-weight: 700;
-  color: #1d4e6b;
+  color: #16477C;
   letter-spacing: 0.08em;
   margin-bottom: 6px;
   text-transform: uppercase;
@@ -834,19 +834,19 @@ a { color: inherit; text-decoration: none; }
 }
 
 .plan-card:hover {
-  border-color: #1d4e6b;
+  border-color: #16477C;
   box-shadow: 0 8px 32px rgba(29,78,107,0.1);
 }
 
 .plan-card.featured {
-  border-color: #1d4e6b;
-  background: #1d4e6b;
+  border-color: #16477C;
+  background: #16477C;
 }
 
 .plan-freq {
   font-family: 'Allura', cursive;
   font-size: 28px;
-  color: #b5a808;
+  color: #c5a74e;
   margin-bottom: 4px;
   line-height: 1;
 }
@@ -857,7 +857,7 @@ a { color: inherit; text-decoration: none; }
   font-family: 'Playfair Display', serif;
   font-size: 26px;
   font-weight: 400;
-  color: #1d4e6b;
+  color: #16477C;
   margin-bottom: 16px;
 }
 
@@ -866,7 +866,7 @@ a { color: inherit; text-decoration: none; }
 .plan-rule {
   width: 40px;
   height: 2px;
-  background: #b5a808;
+  background: #c5a74e;
   margin: 0 auto 20px;
 }
 
@@ -879,7 +879,7 @@ a { color: inherit; text-decoration: none; }
 
 .plan-features li {
   font-size: 14px;
-  color: #1d4e6b;
+  color: #16477C;
   padding: 9px 0;
   border-bottom: 1px solid #f0f0f0;
   display: flex;
@@ -895,7 +895,7 @@ a { color: inherit; text-decoration: none; }
 
 .plan-features li::before {
   content: '✓';
-  color: #b5a808;
+  color: #c5a74e;
   font-weight: 700;
   flex-shrink: 0;
   margin-top: 1px;
@@ -905,12 +905,12 @@ a { color: inherit; text-decoration: none; }
 
 .plan-cta {
   display: inline-block;
-  border: 2px solid #1d4e6b;
+  border: 2px solid #16477C;
   padding: 12px 28px;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.12em;
-  color: #1d4e6b;
+  color: #16477C;
   text-transform: uppercase;
   transition: all 0.2s;
   border-radius: 4px;
@@ -918,8 +918,8 @@ a { color: inherit; text-decoration: none; }
 }
 
 .plan-card.featured .plan-cta { border-color: #fff; color: #fff; }
-.plan-cta:hover { background: #1d4e6b; color: #fff; }
-.plan-card.featured .plan-cta:hover { background: #fff; color: #1d4e6b; }
+.plan-cta:hover { background: #16477C; color: #fff; }
+.plan-card.featured .plan-cta:hover { background: #fff; color: #16477C; }
 
 /* ============ SERVICE CARDS (concierge) ============ */
 .services-section {
@@ -950,7 +950,7 @@ a { color: inherit; text-decoration: none; }
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: #1d4e6b;
+  background: #16477C;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -962,7 +962,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.14em;
-  color: #1d4e6b;
+  color: #16477C;
   margin-bottom: 12px;
   text-transform: uppercase;
 }
@@ -970,7 +970,7 @@ a { color: inherit; text-decoration: none; }
 .service-rule {
   width: 36px;
   height: 2px;
-  background: #b5a808;
+  background: #c5a74e;
   margin: 0 auto 16px;
 }
 
@@ -1000,7 +1000,7 @@ a { color: inherit; text-decoration: none; }
   left: calc(16.67% + 20px);
   right: calc(16.67% + 20px);
   height: 2px;
-  background: linear-gradient(to right, #1d4e6b, #2e8b7a);
+  background: linear-gradient(to right, #16477C, #2e8b7a);
   opacity: 0.3;
 }
 
@@ -1010,7 +1010,7 @@ a { color: inherit; text-decoration: none; }
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: #1d4e6b;
+  background: #16477C;
   color: #fff;
   font-family: 'Playfair Display', serif;
   font-size: 28px;
@@ -1027,7 +1027,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.12em;
-  color: #1d4e6b;
+  color: #16477C;
   margin-bottom: 12px;
   text-transform: uppercase;
 }
@@ -1051,7 +1051,7 @@ a { color: inherit; text-decoration: none; }
   height: 500px;
   border-radius: 4px;
   overflow: hidden;
-  background: #1d4e6b;
+  background: #16477C;
 }
 
 .about-image img {
@@ -1066,20 +1066,20 @@ a { color: inherit; text-decoration: none; }
   font-family: 'Playfair Display', serif;
   font-size: 36px;
   font-weight: 400;
-  color: #1d4e6b;
+  color: #16477C;
   margin-bottom: 24px;
   line-height: 1.2;
 }
 
 .about-text p {
   font-size: 16px;
-  color: #1d4e6b;
+  color: #16477C;
   line-height: 1.85;
   margin-bottom: 20px;
 }
 
 .service-areas {
-  background: #1a4267;
+  background: #0f3360;
   padding: 64px 0;
 }
 
@@ -1157,7 +1157,7 @@ a { color: inherit; text-decoration: none; }
   font-family: 'Raleway', sans-serif;
   font-size: 16px;
   font-weight: 600;
-  color: #1d4e6b;
+  color: #16477C;
   gap: 20px;
   user-select: none;
   transition: color 0.2s;
@@ -1169,7 +1169,7 @@ a { color: inherit; text-decoration: none; }
   content: '+';
   font-size: 26px;
   font-weight: 300;
-  color: #b5a808;
+  color: #c5a74e;
   flex-shrink: 0;
   transition: transform 0.3s;
   line-height: 1;
