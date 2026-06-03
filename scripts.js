@@ -9,11 +9,28 @@
   }
 
   /* ── 2. Parallax hero (homepage only) ── */
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const heroImage = document.querySelector('.hero-image');
-  if (heroImage) {
+  if (heroImage && !prefersReducedMotion) {
+    const hero = heroImage.parentElement;
+    let ticking = false;
+    const updateParallax = () => {
+      const scrolled = window.scrollY;
+      // Only do work while the hero is still on screen
+      if (scrolled <= hero.offsetHeight) {
+        // translate3d for GPU compositing; slight scale hides the top edge gap
+        heroImage.style.transform =
+          'translate3d(0,' + (scrolled * 0.3).toFixed(1) + 'px,0) scale(1.06)';
+      }
+      ticking = false;
+    };
     window.addEventListener('scroll', function () {
-      heroImage.style.transform = 'translateY(' + (window.scrollY * 0.35) + 'px)';
+      if (!ticking) {
+        window.requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
     }, { passive: true });
+    updateParallax();
   }
 
   /* ── 3. Scroll reveal ── */
@@ -48,7 +65,7 @@
   GRID_SELS.forEach(function (sel) {
     document.querySelectorAll(sel).forEach(function (el, i) {
       el.classList.add('reveal');
-      el.style.transitionDelay = Math.min(i * 0.1, 0.4) + 's';
+      el.style.transitionDelay = Math.min(i * 0.06, 0.3) + 's';
     });
   });
 
