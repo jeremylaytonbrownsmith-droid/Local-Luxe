@@ -1320,20 +1320,20 @@ details[open] .faq-question { color: #2e8b7a; }
 .pricing-meta-value { font-size: 14px; font-weight: 600; color: #16477C; }
 
 .pricing-tabs-section { padding: 0 0 80px; background: #fff; }
-.pricing-tab-btns { display: flex; max-width: 820px; margin: 0 auto 48px; border: 1.5px solid #16477C; border-radius: 8px; overflow: hidden; }
-.pricing-tab-btn { flex: 1; padding: 16px 12px; text-align: center; font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; cursor: pointer; border: none; background: #fff; color: #16477C; transition: all 0.2s; border-right: 1.5px solid #16477C; line-height: 1.45; }
+.pricing-tab-btns { display: flex; max-width: 860px; margin: 0 auto 48px; border: 1.5px solid #16477C; border-radius: 8px; overflow: hidden; }
+.pricing-tab-btn { flex: 1; padding: 22px 16px; text-align: center; font-family: 'Raleway', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.03em; cursor: pointer; border: none; background: #fff; color: #16477C; transition: all 0.2s; border-right: 1.5px solid #16477C; line-height: 1.5; }
 .pricing-tab-btn:last-child { border-right: none; }
 .pricing-tab-btn.active { background: #16477C; color: #fff; }
 .pricing-panel { display: none; }
 .pricing-panel.active { display: block; }
 .pricing-panel-label { text-align: center; margin-bottom: 36px; }
 .pricing-panel-label .script-label { text-align: center; }
-.pricing-panel-title { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 400; color: #16477C; }
+.pricing-panel-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 400; color: #16477C; }
 .pricing-panel-title span { color: #c5a74e; }
 
 @media (max-width: 768px) {
   .pricing-tab-btns { flex-direction: column; }
-  .pricing-tab-btn { border-right: none; border-bottom: 1.5px solid #16477C; }
+  .pricing-tab-btn { border-right: none; border-bottom: 1.5px solid #16477C; font-size: 15px; padding: 18px 20px; }
   .pricing-tab-btn:last-child { border-bottom: none; }
   .pricing-meta { flex-direction: column; gap: 16px; padding: 20px 24px; }
   .pricing-intro { padding: 40px 20px 32px; }
@@ -1347,6 +1347,23 @@ details[open] .faq-question { color: #2e8b7a; }
   .lc-svc-card { margin: 24px 20px !important; max-width: 100% !important; }
   .lc-svc-right .lc-svc-card { margin-left: 20px !important; }
   .lc-pricing-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ============ SMALL PHONE TWEAKS (≤480px) ============ */
+@media (max-width: 480px) {
+  .page-hero h1 { font-size: 28px; }
+  .page-hero p { font-size: 14px; }
+  .plan-card { padding: 28px 20px; }
+  .plan-features li { font-size: 15px; }
+  .plan-cta { font-size: 12px; padding: 13px 24px; }
+  .pricing-tab-btn { font-size: 15px; padding: 16px 14px; }
+  .pricing-panel-title { font-size: 24px; }
+  .about-text p { font-size: 15px; }
+  .about-text h2 { font-size: 28px; }
+  .contact-steps-grid { padding: 0 4px; }
+  .faq-question { font-size: 15px; }
+  .faq-answer p { font-size: 14px; }
+  h2 { font-size: 26px !important; }
 }
 
 /* ============ LIFESTYLE CONCIERGE SERVICE SECTIONS ============ */
