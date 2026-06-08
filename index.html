@@ -102,7 +102,7 @@
 
 <!-- ============ 3 PANEL IMAGE ROW ============ -->
 <section id="services" class="three-panels">
-  <a href="#" class="panel">
+  <a href="lifestyle-concierge.html" class="panel">
     <div class="panel-image" style="background-image:url('https://static.wixstatic.com/media/6096ed_86ba95d48033435787a947f2d199d319~mv2.jpg');"></div>
     <div class="panel-overlay">
       <div class="panel-icon">
@@ -115,8 +115,7 @@
     </div>
   </a>
 
-  <a href="#" class="panel">
-    <!-- images/panel-homewatch.jpg -->
+  <a href="homewatch-services.html" class="panel">
     <div class="panel-image" style="background-image:url('https://static.wixstatic.com/media/b61df5_404f710af52740f894591ee1ef6ea924~mv2.avif');"></div>
     <div class="panel-overlay">
       <div class="panel-icon">
@@ -130,7 +129,7 @@
     </div>
   </a>
 
-  <a href="#" class="panel">
+  <a href="lifestyle-concierge.html" class="panel">
     <!-- images/panel-concierge.jpg -->
     <div class="panel-image" style="background-image:url('https://static.wixstatic.com/media/b61df5_d779a36c5bcd4bea8cd52d33754fc9c3~mv2.avif');"></div>
     <div class="panel-overlay">
@@ -235,26 +234,26 @@
     <div class="contact-grid">
       <div class="contact-form-col">
         <h2 class="contact-title">How can we help?</h2>
-        <form class="contact-form">
+        <form class="contact-form" action="https://formspree.io/f/localluxeconcierge@gmail.com" method="POST">
           <div class="form-group">
             <label>Full Name <span class="req">*</span></label>
-            <input type="text" placeholder="Full Name" required/>
+            <input type="text" name="name" placeholder="Full Name" required/>
           </div>
           <div class="form-group">
             <label>Email <span class="req">*</span></label>
-            <input type="email" placeholder="Email" required/>
+            <input type="email" name="email" placeholder="Email" required/>
           </div>
           <div class="form-group">
             <label>Phone Number</label>
-            <input type="tel" placeholder="Phone number"/>
+            <input type="tel" name="phone" placeholder="Phone number"/>
           </div>
           <div class="form-group">
             <label>Address or Community</label>
-            <input type="text" placeholder="Address or Community"/>
+            <input type="text" name="address" placeholder="Address or Community"/>
           </div>
           <div class="form-group">
             <label>Message <span class="req">*</span></label>
-            <textarea placeholder="Please let us know more about your needs" required></textarea>
+            <textarea name="message" placeholder="Please let us know more about your needs" required></textarea>
           </div>
           <button type="submit" class="submit-btn">Submit Inquiry</button>
         </form>
@@ -294,11 +293,12 @@
   <div class="container">
     <ul class="footer-nav">
       <li><a href="index.html">HOME</a></li>
-      <li><a href="#">HOMEWATCH SERVICES</a></li>
-      <li><a href="#">LIFESTYLE CONCIERGE</a></li>
-      <li><a href="#">ABOUT</a></li>
+      <li><a href="homewatch-services.html">HOMEWATCH SERVICES</a></li>
+      <li><a href="lifestyle-concierge.html">LIFESTYLE CONCIERGE</a></li>
+      <li><a href="about.html">ABOUT</a></li>
       <li><a href="#contact">CONTACT</a></li>
-      <li><a href="#">FAQS</a></li>
+      <li><a href="faqs.html">FAQS</a></li>
+      <li><a href="portal-demo.html" class="nav-portal-btn">CLIENT LOGIN</a></li>
     </ul>
     <p class="footer-copy">© 2026 Local Luxe Concierge. All rights reserved.</p>
   </div>
