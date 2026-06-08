@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pricing | Local Luxe Concierge</title>
+<meta name="description" content="Transparent Home Watch pricing starting at $60 a visit. No long-term contracts. Serving Bluffton, Hilton Head, Beaufort, and Okatie, SC."/>
+<link rel="stylesheet" href="styles.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Raleway:wght@300;400;500;600;700&family=Allura&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- ============ TOP BAR ============ -->
+<div class="topbar">
+  <a href="tel:+18433382851" class="topbar-phone">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </svg>
+    <span>843.338.2851</span>
+  </a>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="site-header">
+  <a href="index.html" class="logo">
+    <img src="https://static.wixstatic.com/media/6096ed_8368b6115bce46b39bce4309f50669dd~mv2.png" alt="Local Luxe Concierge" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"/>
+    <div class="logo-fallback">
+      <div class="logo-mark"><span class="lm-l1">L</span><span class="lm-l2">L</span><span class="lm-c">C</span></div>
+      <div class="logo-text">
+        <div class="logo-text-main">LOCAL LUXE</div>
+        <div class="logo-text-sub">CONCIERGE</div>
+      </div>
+    </div>
+  </a>
+  <button class="hamburger" aria-label="Toggle menu" onclick="this.classList.toggle('active');document.querySelector('.main-nav').classList.toggle('nav-open')">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li class="has-dropdown">
+        <a href="homewatch-services.html">HOMEWATCH SERVICES <span class="nav-caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="homewatch-services.html">Home Watch Services</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="concierge-services.html">Concierge Services</a></li>
+          <li><a href="key-holder-services.html">Key-Holder Services</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="lifestyle-concierge.html">LIFESTYLE CONCIERGE <span class="nav-caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="lifestyle-concierge.html">Lifestyle Concierge</a></li>
+          <li><a href="transportation.html">Transportation</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="index.html#contact">CONTACT</a></li>
+      <li><a href="faqs.html">FAQS</a></li>
+      <li><a href="portal-demo.html" class="nav-portal-btn">CLIENT LOGIN</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  <div class="page-hero-content">
+    <div class="page-hero-script">transparent pricing</div>
+    <h1>Exceptional Service Starting at $60 a Visit</h1>
+    <p>No long-term contracts. No surprises. Just professional, attentive care for your home.</p>
+  </div>
+</section>
+
+<!-- ============ PRICING INTRO ============ -->
+<div class="pricing-intro">
+  <div class="script-label" style="text-align:center;">what to expect</div>
+  <h2 class="pricing-intro-title">Simple, Honest Pricing</h2>
+  <p class="pricing-intro-sub">Select your home size below to see the service plan that fits your needs. Every plan includes a full inspection report with photos after every visit.</p>
+  <div class="pricing-meta">
+    <div class="pricing-meta-item">
+      <div class="pricing-meta-label">One-Time Setup Fee</div>
+      <div class="pricing-meta-value">$75.00</div>
+    </div>
+    <div class="pricing-meta-item">
+      <div class="pricing-meta-label">Contract Term</div>
+      <div class="pricing-meta-value">No Long-Term Contract</div>
+    </div>
+    <div class="pricing-meta-item">
+      <div class="pricing-meta-label">Cancel Anytime</div>
+      <div class="pricing-meta-value">No Penalties</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PRICING TABS ============ -->
+<section class="pricing-tabs-section">
+  <div class="container">
+
+    <div class="pricing-tab-btns">
+      <button class="pricing-tab-btn active" onclick="switchTab(0)">Condo or Home<br/>Up to 2,500 Sq. Ft.</button>
+      <button class="pricing-tab-btn" onclick="switchTab(1)">Home Between<br/>2,501 – 4,000 Sq. Ft.</button>
+      <button class="pricing-tab-btn" onclick="switchTab(2)">Home<br/>4,000+ Sq. Ft.</button>
+    </div>
+
+    <!-- TAB 1: up to 2500 sq ft -->
+    <div class="pricing-panel active" id="tab-0">
+      <div class="pricing-panel-label">
+        <div class="script-label" style="text-align:center;">your home size</div>
+        <div class="pricing-panel-title">My Home is Up to <span>2,500 Sq. Ft.</span></div>
+        <p style="font-size:14px;color:#555;margin-top:8px;">Choose the service plan that fits your needs.</p>
+      </div>
+      <div class="plans-grid">
+        <div class="plan-card">
+          <div class="plan-freq">weekly</div>
+          <div class="plan-name">Weekly</div>
+          <div class="plan-rule"></div>
+          <div style="text-align:center;margin-bottom:16px;">
+            <div style="font-size:42px;font-weight:700;color:#16477C;font-family:'Playfair Display',serif;line-height:1;">$60</div>
+            <div style="font-size:12px;color:#888;letter-spacing:0.08em;">per visit</div>
+            <div style="font-size:18px;font-weight:600;color:#2e8b7a;margin-top:8px;">$240 / month</div>
+            <div style="font-size:12px;color:#888;">includes 4 visits monthly</div>
+          </div>
+          <ul class="plan-features">
+            <li>Full interior &amp; exterior inspection</li>
+            <li>Written report with photos</li>
+            <li>Priority email, text &amp; phone</li>
+            <li>Vendor coordination as needed</li>
+            <li>Storm prep &amp; post-storm inspection</li>
+            <li>Mail &amp; package collection</li>
+          </ul>
+          <a href="index.html#contact" class="plan-cta">Get Started</a>
+        </div>
+
+        <div class="plan-card featured">
+          <div class="plan-freq">bi-monthly</div>
+          <div class="plan-name">Bi-Monthly</div>
+          <div class="plan-rule"></div>
+          <div style="text-align:center;margin-bottom:16px;">
+            <div style="font-size:42px;font-weight:700;color:#fff;font-family:'Playfair Display',serif;line-height:1;">$80</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.6);letter-spacing:0.08em;">per visit</div>
+            <div style="font-size:18px;font-weight:600;color:#f0d060;margin-top:8px;">$160 / month</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.6);">includes 2 visits monthly</div>
+          </div>
+          <ul class="plan-features">
+            <li>Full interior &amp; exterior inspection</li>
+            <li>Written report with photos</li>
+            <li>Priority email &amp; text notifications</li>
+            <li>Vendor coordination as needed</li>
+            <li>Storm prep &amp; post-storm inspection</li>
+          </ul>
+          <a href="index.html#contact" class="plan-cta">Get Started</a>
+        </div>
+
+        <div class="plan-card">
+          <div class="plan-freq">monthly</div>
+          <div class="plan-name">Monthly</div>
+          <div class="plan-rule"></div>
+          <div style="text-align:center;margin-bottom:16px;">
+            <div style="font-size:42px;font-weight:700;color:#16477C;font-family:'Playfair Display',serif;line-height:1;">$120</div>
+            <div style="font-size:12px;color:#888;letter-spacing:0.08em;">per visit</div>
+            <div style="font-size:18px;font-weight:600;color:#2e8b7a;margin-top:8px;">$120 / month</div>
+            <div style="font-size:12px;color:#888;">1 visit per month</div>
+          </div>
+          <ul class="plan-features">
+            <li>Full interior &amp; exterior inspection</li>
+            <li>Written report with photos</li>
+            <li>Email notification of any issues</li>
+            <li>Vendor coordination as needed</li>
+          </ul>
+          <a href="index.html#contact" class="plan-cta">Get Started</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: 2501-4000 sq ft -->
+    <div class="pricing-panel" id="tab-1">
+      <div class="pricing-panel-label">
+        <div class="script-label" style="text-align:center;">your home size</div>
+        <div class="pricing-panel-title">My Home is Between <span>2,501 – 4,000 Sq. Ft.</span></div>
+        <p style="font-size:14px;color:#555;margin-top:8px;">Choose the service plan that fits your needs.</p>
+      </div>
+      <div class="plans-grid">
+        <div class="plan-card">
+          <div class="plan-freq">weekly</div>
+          <div class="plan-name">Weekly</div>
+          <div class="plan-rule"></div>
+          <div style="text-align:center;margin-bottom:16px;">
+            <div style="font-size:42px;font-weight:700;color:#16477C;font-family:'Playfair Display',serif;line-height:1;">$80</div>
+            <div style="font-size:12px;color:#888;letter-spacing:0.08em;">per visit</div>
+            <div style="font-size:18px;font-weight:600;color:#2e8b7a;margin-top:8px;">$320 / month</div>
+            <div style="font-size:12px;color:#888;">includes 4 visits monthly</div>
+          </div>
+          <ul class="plan-features">
+            <li>Full interior &amp; exterior inspection</li>
+            <li>Written report with photos</li>
+            <li>Priority email, text &amp; phone</li>
+            <li>Vendor coordination as needed</li>
+            <li>Storm prep &amp; post-storm inspection</li>
+            <li>Mail &amp; package collection</li>
+          </ul>
+          <a href="index.html#contact" class="plan-cta">Get Started</a>
+        </div>
+
+        <div class="plan-card featured">
+          <div class="plan-freq">bi-monthly</div>
+          <div class="plan-name">Bi-Monthly</div>
+          <div class="plan-rule"></div>
+          <div style="text-align:center;margin-bottom:16px;">
+            <div style="font-size:42px;font-weight:700;color:#fff;font-family:'Playfair Display',serif;line-height:1;">$110</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.6);letter-spacing:0.08em;">per visit</div>
+            <div style="font-size:18px;font-weight:600;color:#f0d060;margin-top:8px;">$220 / month</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.6);">includes 2 visits monthly</div>
+          </div>
+          <ul class="plan-features">
+            <li>Full interior &amp; exterior inspection</li>
+            <li>Written report with photos</li>
+            <li>Priority email &amp; text notifications</li>
+            <li>Vendor coordination as needed</li>
+            <li>Storm prep &amp; post-storm inspection</li>
+          </ul>
+          <a href="index.html#contact" class="plan-cta">Get Started</a>
+        </div>
+
+        <div class="plan-card">
+          <div class="plan-freq">monthly</div>
+          <div class="plan-name">Monthly</div>
+          <div class="plan-rule"></div>
+          <div style="text-align:center;margin-bottom:16px;">
+            <div style="font-size:42px;font-weight:700;color:#16477C;font-family:'Playfair Display',serif;line-height:1;">$140</div>
+            <div style="font-size:12px;color:#888;letter-spacing:0.08em;">per visit</div>
+            <div style="font-size:18px;font-weight:600;color:#2e8b7a;margin-top:8px;">$140 / month</div>
+            <div style="font-size:12px;color:#888;">1 visit per month</div>
+          </div>
+          <ul class="plan-features">
+            <li>Full interior &amp; exterior inspection</li>
+            <li>Written report with photos</li>
+            <li>Email notification of any issues</li>
+            <li>Vendor coordination as needed</li>
+          </ul>
+          <a href="index.html#contact" class="plan-cta">Get Started</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: 4000+ sq ft -->
+    <div class="pricing-panel" id="tab-2">
+      <div class="pricing-panel-label">
+        <div class="script-label" style="text-align:center;">your home size</div>
+        <div class="pricing-panel-title">My Home is <span>4,000+ Sq. Ft.</span></div>
+        <p style="font-size:14px;color:#555;margin-top:8px;">Choose the service plan that fits your needs.</p>
+      </div>
+      <div class="plans-grid">
+        <div class="plan-card">
+          <div class="plan-freq">weekly</div>
+          <div class="plan-name">Weekly</div>
+          <div class="plan-rule"></div>
+          <div style="text-align:center;margin-bottom:16px;">
+            <div style="font-size:42px;font-weight:700;color:#16477C;font-family:'Playfair Display',serif;line-height:1;">$100</div>
+            <div style="font-size:12px;color:#888;letter-spacing:0.08em;">per visit</div>
+            <div style="font-size:18px;font-weight:600;color:#2e8b7a;margin-top:8px;">$400 / month</div>
+            <div style="font-size:12px;color:#888;">includes 4 visits monthly</div>
+          </div>
+          <ul class="plan-features">
+            <li>Full interior &amp; exterior inspection</li>
+            <li>Written report with photos</li>
+            <li>Priority email, text &amp; phone</li>
+            <li>Vendor coordination as needed</li>
+            <li>Storm prep &amp; post-storm inspection</li>
+            <li>Mail &amp; package collection</li>
+          </ul>
+          <a href="index.html#contact" class="plan-cta">Get Started</a>
+        </div>
+
+        <div class="plan-card featured">
+          <div class="plan-freq">bi-monthly</div>
+          <div class="plan-name">Bi-Monthly</div>
+          <div class="plan-rule"></div>
+          <div style="text-align:center;margin-bottom:16px;">
+            <div style="font-size:42px;font-weight:700;color:#fff;font-family:'Playfair Display',serif;line-height:1;">$120</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.6);letter-spacing:0.08em;">per visit</div>
+            <div style="font-size:18px;font-weight:600;color:#f0d060;margin-top:8px;">$240 / month</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.6);">includes 2 visits monthly</div>
+          </div>
+          <ul class="plan-features">
+            <li>Full interior &amp; exterior inspection</li>
+            <li>Written report with photos</li>
+            <li>Priority email &amp; text notifications</li>
+            <li>Vendor coordination as needed</li>
+            <li>Storm prep &amp; post-storm inspection</li>
+          </ul>
+          <a href="index.html#contact" class="plan-cta">Get Started</a>
+        </div>
+
+        <div class="plan-card">
+          <div class="plan-freq">monthly</div>
+          <div class="plan-name">Monthly</div>
+          <div class="plan-rule"></div>
+          <div style="text-align:center;margin-bottom:16px;">
+            <div style="font-size:42px;font-weight:700;color:#16477C;font-family:'Playfair Display',serif;line-height:1;">$160</div>
+            <div style="font-size:12px;color:#888;letter-spacing:0.08em;">per visit</div>
+            <div style="font-size:18px;font-weight:600;color:#2e8b7a;margin-top:8px;">$160 / month</div>
+            <div style="font-size:12px;color:#888;">1 visit per month</div>
+          </div>
+          <ul class="plan-features">
+            <li>Full interior &amp; exterior inspection</li>
+            <li>Written report with photos</li>
+            <li>Email notification of any issues</li>
+            <li>Vendor coordination as needed</li>
+          </ul>
+          <a href="index.html#contact" class="plan-cta">Get Started</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ GET STARTED BANNER ============ -->
+<section class="get-started-banner">
+  <div class="container gs-grid">
+    <div class="gs-text">
+      <div class="script-label-gold">get started</div>
+      <h2>Let's work together.</h2>
+      <p>Questions about which plan is right for you? We're happy to talk through it — free consultations always available.</p>
+    </div>
+    <a href="index.html#contact" class="btn btn-outline-white-large">CONTACT US</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <ul class="footer-nav">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="homewatch-services.html">HOMEWATCH SERVICES</a></li>
+      <li><a href="pricing.html">PRICING</a></li>
+      <li><a href="lifestyle-concierge.html">LIFESTYLE CONCIERGE</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="index.html#contact">CONTACT</a></li>
+      <li><a href="faqs.html">FAQS</a></li>
+      <li><a href="portal-demo.html" class="nav-portal-btn">CLIENT LOGIN</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 Local Luxe Concierge. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+function switchTab(index) {
+  document.querySelectorAll('.pricing-tab-btn').forEach(function(btn, i) {
+    btn.classList.toggle('active', i === index);
+  });
+  document.querySelectorAll('.pricing-panel').forEach(function(panel, i) {
+    panel.classList.toggle('active', i === index);
+  });
+}
+</script>
+<script src="scripts.js"></script>
+</body>
+</html>

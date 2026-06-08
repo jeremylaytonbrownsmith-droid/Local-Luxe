@@ -16,6 +16,16 @@
     }, { passive: true });
   }
 
+  /* ── 2b. Mobile dropdown toggles ── */
+  document.querySelectorAll('.has-dropdown > a').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        this.parentElement.classList.toggle('open');
+      }
+    });
+  });
+
   /* ── 3. Scroll reveal ── */
   // Grid children get staggered delays
   var GRID_SELS = [
