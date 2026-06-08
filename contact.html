@@ -226,9 +226,9 @@
       <h2 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:400;color:#fff;margin-bottom:28px;line-height:1.45;">About Your Concierge and<br/>Home Watch Needs</h2>
 
       <!-- Tab Toggle -->
-      <div style="display:flex;border:1px solid rgba(255,255,255,0.2);margin-bottom:32px;">
-        <button id="tab-client" onclick="switchContactForm('client')" style="flex:1;padding:12px 16px;font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;border:none;cursor:pointer;background:#c5a74e;color:#fff;transition:all 0.2s;">Client</button>
-        <button id="tab-sub" onclick="switchContactForm('sub')" style="flex:1;padding:12px 16px;font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;border:none;cursor:pointer;background:transparent;color:rgba(255,255,255,0.55);transition:all 0.2s;">Subcontractor</button>
+      <div style="display:flex;margin-bottom:32px;gap:8px;">
+        <button id="tab-client" onclick="switchContactForm('client')" style="flex:1;padding:13px 16px;font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;border:2px solid #c5a74e;cursor:pointer;background:#c5a74e;color:#0f3360;transition:all 0.2s;">Client</button>
+        <button id="tab-sub" onclick="switchContactForm('sub')" style="flex:1;padding:13px 16px;font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;border:2px solid rgba(255,255,255,0.5);cursor:pointer;background:transparent;color:#fff;transition:all 0.2s;">Subcontractor</button>
       </div>
 
       <!-- CLIENT FORM -->
@@ -325,17 +325,21 @@ function switchContactForm(type) {
   if (type === 'client') {
     clientForm.style.display = 'block';
     subForm.style.display    = 'none';
-    tabClient.style.background = '#c5a74e';
-    tabClient.style.color      = '#fff';
-    tabSub.style.background    = 'transparent';
-    tabSub.style.color         = 'rgba(255,255,255,0.55)';
+    tabClient.style.background   = '#c5a74e';
+    tabClient.style.color        = '#0f3360';
+    tabClient.style.borderColor  = '#c5a74e';
+    tabSub.style.background      = 'transparent';
+    tabSub.style.color           = '#fff';
+    tabSub.style.borderColor     = 'rgba(255,255,255,0.5)';
   } else {
     clientForm.style.display = 'none';
     subForm.style.display    = 'block';
-    tabSub.style.background    = '#c5a74e';
-    tabSub.style.color         = '#fff';
-    tabClient.style.background = 'transparent';
-    tabClient.style.color      = 'rgba(255,255,255,0.55)';
+    tabSub.style.background      = '#c5a74e';
+    tabSub.style.color           = '#0f3360';
+    tabSub.style.borderColor     = '#c5a74e';
+    tabClient.style.background   = 'transparent';
+    tabClient.style.color        = '#fff';
+    tabClient.style.borderColor  = 'rgba(255,255,255,0.5)';
   }
 }
 
