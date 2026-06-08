@@ -349,7 +349,7 @@ a { color: inherit; text-decoration: none; }
 .panel-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 50%, transparent 70%);
+  background: linear-gradient(to top, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.08) 45%, transparent 65%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
