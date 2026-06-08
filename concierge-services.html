@@ -4,9 +4,16 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Concierge Services | Local Luxe Concierge</title>
-<meta name="description" content="Add-on Concierge Services for Home Watch clients in Bluffton, Hilton Head, Beaufort, and Okatie, SC. Subcontractor coordination, seasonal prep, maintenance, and more."/>
+<meta name="description" content="Comprehensive Home Watch and Concierge Services in Bluffton, Hilton Head, Beaufort, and Okatie, SC. Routine inspections, subcontractor coordination, seasonal prep, and more."/>
 <link rel="stylesheet" href="styles.css"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Raleway:wght@300;400;500;600;700&family=Allura&display=swap" rel="stylesheet"/>
+<style>
+@media (max-width: 768px) {
+  .cs-why-grid  { grid-template-columns: 1fr !important; gap: 28px !important; }
+  .cs-circles   { grid-template-columns: 1fr !important; }
+  .cs-circles a div { width: 140px !important; height: 140px !important; }
+}
+</style>
 </head>
 <body>
 
@@ -67,9 +74,9 @@
 <!-- ============ PAGE HERO ============ -->
 <section class="page-hero">
   <div class="page-hero-content">
-    <div class="page-hero-script">concierge add-ons</div>
-    <h1>Concierge Services</h1>
-    <p>Thoughtful add-on services that complement your Home Watch plan and elevate your property experience.</p>
+    <div class="page-hero-script">concierge services</div>
+    <h1>Complete Home &amp; Lifestyle Management</h1>
+    <p>Local Luxe Concierge delivers comprehensive Home Watch services and optional Concierge services to ensure consistent, high-quality care — providing homeowners with unparalleled peace of mind.</p>
   </div>
 </section>
 
@@ -77,11 +84,11 @@
 <section class="intro-section">
   <div class="container intro-grid">
     <div class="intro-body">
-      <div class="script-label">what we offer</div>
-      <h2>Elevate Your Home Watch Plan</h2>
-      <p>Our Home Watch plan keeps your property safe while you're away — but sometimes you need more than inspections. Our Concierge add-on services fill in all the gaps, giving you a fully hands-off home management experience from wherever you are in the world.</p>
-      <p>From coordinating contractors to preparing your home for a new season, our concierge team handles the details that require a trusted, reliable presence on the ground. Every service is performed by someone who knows your property and treats it with the same care they'd give their own.</p>
-      <p>Concierge services can be bundled with any Home Watch plan or arranged individually as needed. Just let us know what you need — we're here to make home ownership simpler and more enjoyable.</p>
+      <div class="script-label">who we serve</div>
+      <h2>Your Time Is Valuable. Let Us Handle the Rest.</h2>
+      <p>Local Luxe clients share a common wish — to be fully present for the moments that matter most. They're ready to hand off the responsibilities of maintenance, errands, and readiness to a trusted partner they can count on from anywhere.</p>
+      <p>From coordinating contractors to commissioning local services to stocking your fridge before you arrive — we take care of it all. Need a tee time? Consider it done. Cleaning? Taken care of. Your home holiday-ready? We've got you covered.</p>
+      <p>We offer comprehensive home management services; however, as we are not a brokerage, tenant placement and rental management are not part of our offerings.</p>
       <a href="contact.html" class="btn btn-outline-white" style="border-color:#16477C;background:#16477C;color:#fff;margin-top:8px;">INQUIRE NOW <span class="arrow-right">→</span></a>
     </div>
     <div class="intro-image">
@@ -90,7 +97,7 @@
   </div>
 </section>
 
-<!-- ============ SERVICES ============ -->
+<!-- ============ SERVICES GRID ============ -->
 <section class="services-section" style="background:#f5f3ee;">
   <div class="container">
     <div class="section-header">
@@ -108,7 +115,7 @@
         </div>
         <h3>Subcontractor Coordination</h3>
         <div class="service-rule"></div>
-        <p>We schedule, meet, and oversee contractors and repair technicians on your behalf so you never need to coordinate from afar.</p>
+        <p>We schedule, meet, and oversee contractors and repair technicians on your behalf — including construction projects of any size — so you never need to coordinate from afar.</p>
       </div>
 
       <div class="service-card">
@@ -119,7 +126,7 @@
         </div>
         <h3>Seasonal Preparation</h3>
         <div class="service-rule"></div>
-        <p>We prepare your home for seasonal changes — including storm season readiness, winterization, and pre-arrival setup before you return.</p>
+        <p>We prepare your home for every season — storm readiness, winterization, holiday prep, and pre-arrival setup so your home is waiting exactly the way you like it.</p>
       </div>
 
       <div class="service-card">
@@ -130,7 +137,7 @@
         </div>
         <h3>Ongoing Maintenance</h3>
         <div class="service-rule"></div>
-        <p>Coordination of routine maintenance services including HVAC filter changes, pest control treatments, lawn care, and pool service oversight.</p>
+        <p>Coordination of routine maintenance including HVAC filter changes, pest control, lawn care, pool service, and housekeeping oversight — everything running, always.</p>
       </div>
 
       <div class="service-card">
@@ -141,18 +148,19 @@
         </div>
         <h3>Emergency Liaison</h3>
         <div class="service-rule"></div>
-        <p>When urgent issues arise at your property, we respond immediately — coordinating the right professionals and keeping you fully informed every step of the way.</p>
+        <p>When urgent issues arise, we respond immediately — coordinating the right professionals and keeping you fully informed every step of the way, no matter where you are.</p>
       </div>
 
       <div class="service-card">
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="32" height="32">
-            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
           </svg>
         </div>
-        <h3>Personal Assistance</h3>
+        <h3>Errands &amp; Personal Assistance</h3>
         <div class="service-rule"></div>
-        <p>Errands, grocery pickup, prescription retrieval, and other personal tasks handled locally so your home and life run smoothly from a distance.</p>
+        <p>Grocery pickup, prescription retrieval, dry cleaning, and other personal tasks handled locally so your home and life run smoothly from a distance.</p>
       </div>
 
       <div class="service-card">
@@ -163,8 +171,66 @@
         </div>
         <h3>Experience Management</h3>
         <div class="service-rule"></div>
-        <p>Restaurant reservations, event tickets, activity planning, and curated experiences for when you're in town and want to make the most of the Lowcountry.</p>
+        <p>Restaurant reservations, event tickets, tee times, activity planning, and curated experiences — so every visit to the Lowcountry is exactly what you want it to be.</p>
       </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY US — FULL-WIDTH ============ -->
+<section style="background:#16477C;padding:80px 40px;">
+  <div style="max-width:860px;margin:0 auto;text-align:center;">
+    <div style="font-family:'Allura',cursive;font-size:34px;color:#c5a74e;margin-bottom:16px;">why local luxe</div>
+    <p style="font-family:'Playfair Display',serif;font-size:22px;font-style:italic;color:#fff;line-height:1.65;margin-bottom:32px;">With our Home Watch and Lifestyle Concierge services, Local Luxe takes the stress out of daily responsibilities — so you can be fully present, more mindful, and free to make the most of your time.</p>
+    <div style="width:60px;height:2px;background:#c5a74e;margin:0 auto 40px;"></div>
+    <div class="cs-why-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;text-align:left;">
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#c5a74e;margin-bottom:10px;">Our Background</div>
+        <p style="font-size:15px;color:rgba(255,255,255,0.85);line-height:1.75;">With a background in both property management and healthcare, we've cultivated strong relationships throughout the Bluffton, Beaufort, and Hilton Head area. You can have confidence that the services we provide — and the specialists we engage on your behalf — are consistently professional, reliable, and reputable.</p>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#c5a74e;margin-bottom:10px;">Our Standard</div>
+        <p style="font-size:15px;color:rgba(255,255,255,0.85);line-height:1.75;">We are committed to selecting the most qualified professional for each service. When specialized expertise is required, we draw upon our trusted network to secure the most appropriate match — never compromising by assigning someone simply "sufficient." Because your lifestyle is uniquely yours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPLORE OUR SERVICES ============ -->
+<section style="background:#f5f3ee;padding:72px 40px;">
+  <div style="max-width:900px;margin:0 auto;text-align:center;">
+    <div style="font-family:'Allura',cursive;font-size:32px;color:#c5a74e;margin-bottom:8px;">explore</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:34px;color:#16477C;font-weight:400;margin-bottom:12px;">Our Service Areas</h2>
+    <p style="font-size:15px;color:#555;max-width:560px;margin:0 auto 52px;line-height:1.7;">Everything we offer falls into two core categories. Explore each to find the services that fit your needs.</p>
+    <div class="cs-circles" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;max-width:780px;margin:0 auto;">
+
+      <a href="homewatch-services.html" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0;">
+        <div style="width:160px;height:160px;border-radius:50%;background:#16477C;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;border:3px solid #c5a74e;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.06)';this.style.boxShadow='0 12px 36px rgba(22,71,124,0.25)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='none'">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c5a74e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="36" height="36">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+          <span style="font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.06em;color:#fff;text-align:center;line-height:1.3;">Home<br/>Watch</span>
+        </div>
+      </a>
+
+      <a href="lifestyle-concierge.html" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0;">
+        <div style="width:160px;height:160px;border-radius:50%;background:#16477C;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;border:3px solid #c5a74e;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.06)';this.style.boxShadow='0 12px 36px rgba(22,71,124,0.25)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='none'">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c5a74e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="36" height="36">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.121 2.121 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+          <span style="font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.06em;color:#fff;text-align:center;line-height:1.3;">Lifestyle<br/>Concierge</span>
+        </div>
+      </a>
+
+      <a href="contact.html" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:0;">
+        <div style="width:160px;height:160px;border-radius:50%;background:#c5a74e;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;border:3px solid #16477C;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.06)';this.style.boxShadow='0 12px 36px rgba(197,167,78,0.3)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='none'">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#16477C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="36" height="36">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span style="font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.06em;color:#16477C;text-align:center;line-height:1.3;">Getting<br/>Started</span>
+        </div>
+      </a>
 
     </div>
   </div>

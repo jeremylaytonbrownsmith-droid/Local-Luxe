@@ -1342,4 +1342,6 @@ details[open] .faq-question { color: #2e8b7a; }
   .has-dropdown.open .dropdown { display: block; }
   .dropdown li a { padding: 9px 14px; }
   .dropdown li a:hover { padding-left: 18px; }
+  .cs-why-grid { grid-template-columns: 1fr !important; }
+  .cs-circles-grid { grid-template-columns: 1fr !important; align-items: center; }
 }
