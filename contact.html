@@ -228,6 +228,7 @@
       <form id="form-client" action="https://formspree.io/f/localluxeconcierge@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="New Client Inquiry — Local Luxe Concierge"/>
         <input type="hidden" name="selected_plan" id="hidden-plan" value=""/>
+        <input type="hidden" name="inquiry_source" id="hidden-source" value=""/>
 
         <div class="plan-selected" id="plan-selected-notice">
           <div class="plan-selected-label">Selected Plan</div>
@@ -356,6 +357,19 @@ function switchContactForm(type) {
     document.getElementById('plan-selected-notice').style.display = 'block';
     document.getElementById('hidden-plan').value = label;
     document.getElementById('contact-message').value = "I'm interested in the " + label + ". Please contact me to get started.";
+  }
+  var sourceLabels = {
+    'homepage':            'Homepage',
+    'homewatch':           'Homewatch Services page',
+    'lifestyle':           'Lifestyle Concierge page',
+    'pricing':             'Pricing page',
+    'about':               'About page',
+    'faqs':                'FAQs page',
+    'portal':              'Client Portal page'
+  };
+  var source = params.get('source');
+  if (source && sourceLabels[source]) {
+    document.getElementById('hidden-source').value = sourceLabels[source];
   }
 })();
 </script>
