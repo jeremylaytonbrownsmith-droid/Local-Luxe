@@ -1372,6 +1372,16 @@ details[open] .faq-question { color: #2e8b7a; }
   color: #c5a74e;
   font-weight: 700;
 }
+.hw-panel-text {
+  font-size: 15px;
+  color: #3f4750;
+  line-height: 1.7;
+  margin: 0;
+}
+/* Panels slide in from their side as they scroll into view */
+.hw-inspect.right .hw-inspect-panel.reveal { opacity: 0; transform: translateX(70px); }
+.hw-inspect.left  .hw-inspect-panel.reveal { opacity: 0; transform: translateX(-70px); }
+.hw-inspect .hw-inspect-panel.reveal.visible { opacity: 1; transform: none; }
 @media (max-width: 768px) {
   .hw-inspect {
     min-height: 0;
@@ -1382,6 +1392,8 @@ details[open] .faq-question { color: #2e8b7a; }
   .hw-inspect-panel { padding: 34px 26px; max-width: 560px; }
   .hw-inspect-panel h3 { font-size: 26px; }
   .hw-checklist li { font-size: 14px; }
+  .hw-inspect.right .hw-inspect-panel.reveal,
+  .hw-inspect.left  .hw-inspect-panel.reveal { transform: translateY(28px); }
 }
 
 /* ============ DROPDOWN NAV ============ */
