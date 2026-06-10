@@ -771,7 +771,7 @@ a { color: inherit; text-decoration: none; }
 
 .page-hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 48px;
+  font-size: 56px;
   font-weight: 400;
   color: #fff;
   line-height: 1.2;
@@ -1327,7 +1327,7 @@ details[open] .faq-question { color: #2e8b7a; }
   .gs-text h2 { font-size: 28px; }
   .contact-title { font-size: 28px; }
   .page-hero { padding: 60px 20px; }
-  .page-hero h1 { font-size: 34px; }
+  .page-hero h1 { font-size: 40px; }
   .check-grid { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; }
   .section-header h2 { font-size: 28px; }
@@ -1523,7 +1523,7 @@ details[open] .faq-question { color: #2e8b7a; }
 
 /* ============ SMALL PHONE TWEAKS (≤480px) ============ */
 @media (max-width: 480px) {
-  .page-hero h1 { font-size: 28px; }
+  .page-hero h1 { font-size: 32px; }
   .page-hero p { font-size: 14px; }
   .plan-card { padding: 28px 20px; }
   .plan-features li { font-size: 15px; }
