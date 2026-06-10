@@ -53,6 +53,7 @@
     '.contact-form-col',
     '.contact-info-col',
     '.areas-intro',
+    '.hw-inspect-panel',
   ];
 
   GRID_SELS.forEach(function (sel) {
