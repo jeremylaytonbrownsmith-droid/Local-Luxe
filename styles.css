@@ -505,6 +505,11 @@ a { color: inherit; text-decoration: none; }
   justify-content: center;
   margin-bottom: 34px;
   flex-shrink: 0;
+  background: transparent;
+  transition: background 0.35s ease;
+}
+.value-card:hover .value-icon-circle {
+  background: rgba(197, 167, 78, 0.16);
 }
 .value-icon-circle svg.vic-ring {
   position: absolute;
@@ -512,19 +517,16 @@ a { color: inherit; text-decoration: none; }
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 0.4s ease, transform 0.4s ease;
   pointer-events: none;
 }
 .vic-ring circle {
   fill: none;
   stroke: #c5a74e;
-  stroke-width: 3;
+  stroke-width: 2;
+  transition: stroke-width 0.35s ease;
 }
-.value-card:hover svg.vic-ring {
-  opacity: 1;
-  transform: scale(1);
+.value-card:hover .vic-ring circle {
+  stroke-width: 4;
 }
 
 .value-icon-circle svg {
