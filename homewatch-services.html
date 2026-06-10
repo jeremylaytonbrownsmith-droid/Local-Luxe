@@ -41,9 +41,16 @@
   <nav class="main-nav">
     <ul>
       <li><a href="/">HOME</a></li>
-      <li><a href="/homewatch-services">HOMEWATCH SERVICES</a></li>
+      <li class="has-dropdown">
+        <a href="/homewatch-services">HOMEWATCH SERVICES <span class="nav-caret">&#9662;</span></a>
+        <ul class="dropdown">
+          <li><a href="/homewatch-services">Home Watch Services</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/concierge-services">Concierge Services</a></li>
+          <li><a href="/key-holder-services">Key-Holder Services</a></li>
+        </ul>
+      </li>
       <li><a href="/lifestyle-concierge">LIFESTYLE CONCIERGE</a></li>
-      <li><a href="/pricing">PRICING</a></li>
       <li><a href="/about">ABOUT</a></li>
       <li><a href="/contact">CONTACT</a></li>
       <li><a href="/faqs">FAQS</a></li>
@@ -136,52 +143,8 @@
     </div>
   </div>
 
-  <!-- Add-On Concierge Services: photo with overlapping panel (panel right) -->
-  <div class="hw-inspect right" style="background-image:url('https://static.wixstatic.com/media/b61df5_c806985b90314d93a7a4ae7ebc4acadd~mv2.jpeg');">
-    <div class="hw-inspect-panel">
-      <div class="script-label">services</div>
-      <h3>Add-On Concierge Services</h3>
-      <p class="hw-panel-text">Clients can round out Home Watch visits with add-on Concierge services that allow Local Luxe to provide customized care. Lifestyle Concierge service categories include but are not limited to:</p>
-      <ul class="hw-addon-list">
-        <li>Subcontractor Coordination</li>
-        <li>Seasonal Preparation</li>
-        <li>Ongoing Maintenance</li>
-        <li>Emergency Liaison</li>
-        <li>Personal Assistance</li>
-        <li>Experience Management</li>
-      </ul>
-      <a href="/concierge-services" class="btn btn-outline-white" style="border-color:#16477C;background:#16477C;color:#fff;">SEE SERVICES</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ KEY-HOLDER SERVICES ============ -->
-<section style="background:#fff;padding:80px 0;">
-  <div class="container">
-    <div class="section-header">
-      <div class="script-label" style="text-align:center;">trusted access control</div>
-      <h2>Key-Holder Services</h2>
-      <p>As your on-the-ground key holder, we coordinate access for emergencies, vendors, and guests — so your home is always in the right hands.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:900px;margin:0 auto;">
-
-      <div style="border:1px solid #e8e2d6;border-top:3px solid #c5a74e;padding:32px 28px;">
-        <div style="font-family:'Playfair Display',serif;font-size:18px;color:#16477C;margin-bottom:10px;">Emergency Access</div>
-        <p style="font-size:14px;color:#555;line-height:1.7;margin:0;">We respond quickly to alarm activations, water leaks, HVAC failures, storm damage, and lockouts — coordinating the right professionals and keeping you informed every step of the way.</p>
-      </div>
-
-      <div style="border:1px solid #e8e2d6;border-top:3px solid #c5a74e;padding:32px 28px;">
-        <div style="font-family:'Playfair Display',serif;font-size:18px;color:#16477C;margin-bottom:10px;">Vendor &amp; Contractor Entry</div>
-        <p style="font-size:14px;color:#555;line-height:1.7;margin:0;">We meet contractors and service providers, provide access, and oversee work while you're away — so you never need to hand out copies of your key or coordinate from afar.</p>
-      </div>
-
-      <div style="border:1px solid #e8e2d6;border-top:3px solid #c5a74e;padding:32px 28px;">
-        <div style="font-family:'Playfair Display',serif;font-size:18px;color:#16477C;margin-bottom:10px;">Guest &amp; Family Access</div>
-        <p style="font-size:14px;color:#555;line-height:1.7;margin:0;">We coordinate arrivals and departures, provide home access and walk-throughs, and make sure your home is ready and welcoming for every guest or family member.</p>
-      </div>
-
-    </div>
-  </div>
+  <!-- Home Watch focuses on the two inspection tiles; Concierge and Key-Holder
+       have their own pages, reachable from the Homewatch Services dropdown. -->
 </section>
 
 <!-- ============ VISIT PLANS ============ -->
