@@ -505,11 +505,6 @@ a { color: inherit; text-decoration: none; }
   justify-content: center;
   margin-bottom: 34px;
   flex-shrink: 0;
-  background: transparent;
-  transition: background 0.35s ease;
-}
-.value-card:hover .value-icon-circle {
-  background: rgba(197, 167, 78, 0.16);
 }
 .value-icon-circle svg.vic-ring {
   position: absolute;
