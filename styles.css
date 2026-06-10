@@ -1380,6 +1380,16 @@ details[open] .faq-question { color: #2e8b7a; }
   line-height: 1.7;
   margin: 0;
 }
+.hw-addon-list {
+  list-style: none;
+  margin: 16px 0 26px;
+  padding: 0;
+}
+.hw-addon-list li {
+  font-size: 15px;
+  color: #16477C;
+  line-height: 1.95;
+}
 /* Panels slide in from their side as they scroll into view */
 .hw-inspect.right .hw-inspect-panel.reveal { opacity: 0; transform: translateX(70px); }
 .hw-inspect.left  .hw-inspect-panel.reveal { opacity: 0; transform: translateX(-70px); }
