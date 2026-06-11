@@ -50,7 +50,8 @@
   /* Scroll roll-over: referral pins, Let's Work Together rolls up over it */
   .rp-stack { position: relative; }
   .rp-roll-base { position: sticky; top: 96px; z-index: 1; }
-  .rp-roll-over { position: relative; z-index: 2; border-radius: 34px 34px 0 0; box-shadow: 0 -16px 50px rgba(15, 35, 64, 0.14); }
+  .rp-roll-over { position: relative; z-index: 2; border-radius: 34px 34px 0 0; box-shadow: 0 -16px 50px rgba(15, 35, 64, 0.14); min-height: 100vh; display: flex; align-items: center; }
+  .rp-roll-over .rp-feature-grid { width: 100%; }
 
   @media (max-width: 880px) {
     .rp-feature-grid { grid-template-columns: 1fr; }
@@ -61,7 +62,7 @@
     .rp-h1 { font-size: 34px; }
     .reveal.rp-slide-right, .reveal.rp-slide-left { transform: translateY(28px); }
     .rp-roll-base { position: static; top: auto; }
-    .rp-roll-over { border-radius: 0; box-shadow: none; }
+    .rp-roll-over { border-radius: 0; box-shadow: none; min-height: 0; display: block; }
   }
 </style>
 <link rel="icon" type="image/jpeg" href="https://static.wixstatic.com/media/6096ed_9cf87ba68a3e4e52b9d7f5e26542cd2c~mv2.jpg"/>
