@@ -50,8 +50,7 @@
   /* Scroll roll-over: referral pins, Let's Work Together rolls up over it */
   .rp-stack { position: relative; }
   .rp-roll-base { position: sticky; top: 96px; z-index: 1; }
-  .rp-roll-over { position: relative; z-index: 2; border-radius: 34px 34px 0 0; box-shadow: 0 -16px 50px rgba(15, 35, 64, 0.14); min-height: 100vh; display: flex; align-items: center; }
-  .rp-roll-over .rp-feature-grid { width: 100%; }
+  .rp-roll-over { position: relative; z-index: 2; border-radius: 34px 34px 0 0; box-shadow: 0 -16px 50px rgba(15, 35, 64, 0.14); min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
 
   @media (max-width: 880px) {
     .rp-feature-grid { grid-template-columns: 1fr; }
@@ -179,8 +178,10 @@
   </div>
 </section>
 
-<!-- ============ WHY REALTORS PARTNER (intro + image left, navy box right) ============ -->
-<section class="rp-section" style="background:#f5f6f7;">
+<!-- ============ WHY PARTNER + ROLL-OVER (Referral + Let's Work roll over Why Partner) ============ -->
+<div class="rp-stack">
+
+<section class="rp-section rp-roll-base" style="background:#f5f6f7;">
   <div class="rp-wrap">
     <h2 class="rp-h2">Why Realtors Partner With Us</h2>
     <p class="rp-p" style="max-width:860px;margin-bottom:40px;">Our goal is simple — help your clients protect their investment while making you look great for connecting them with a reliable local resource.</p>
@@ -209,19 +210,13 @@
   </div>
 </section>
 
-<!-- ============ REFERRAL + LET'S WORK TOGETHER (scroll roll-over) ============ -->
-<div class="rp-stack">
-
-<section class="rp-section rp-roll-base" style="background:#f5f6f7;">
+<section class="rp-section rp-roll-over" style="background:#f5f6f7;">
   <div class="rp-wrap reveal rp-slide-left">
     <h2 class="rp-h2">Realtor Referral Program</h2>
     <p class="rp-p" style="max-width:900px;">We appreciate the trust realtors place in us when referring their clients. Local Luxe Concierge offers a Realtor Referral Program designed to thank our partners for connecting homeowners with our services.</p>
     <p class="rp-p" style="max-width:900px;">If you're a realtor in the Lowcountry or surrounding areas, we'd love to connect and discuss how we can work together.</p>
   </div>
-</section>
-
-<section class="rp-section rp-roll-over" style="background:#f5f6f7;">
-  <div class="rp-feature-grid blue rev">
+  <div class="rp-feature-grid blue rev" style="margin-top:44px;">
     <div class="rp-feature-body reveal rp-slide-left">
       <h2 class="rp-h2">Let's Work Together</h2>
       <p class="rp-p" style="margin-bottom:34px;">Help your clients protect their investment long after closing.</p>
