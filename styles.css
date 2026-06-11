@@ -780,6 +780,14 @@ a { color: inherit; text-decoration: none; }
 .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ============ PAGE HERO (inner pages) ============ */
+.about-hero-nav a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+  transition: color 0.2s, border-color 0.2s;
+}
+.about-hero-nav a:hover { color: #c5a74e; border-color: #c5a74e; }
+
 .page-hero {
   background: linear-gradient(160deg, #16477C 0%, #0f3360 100%);
   padding: 90px 40px 80px;
