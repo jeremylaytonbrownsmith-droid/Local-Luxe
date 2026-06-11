@@ -4,9 +4,58 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>For Realtors | Local Luxe Concierge</title>
-<meta name="description" content="Local Luxe Concierge partners with Realtors in Bluffton, Hilton Head, Beaufort, and Okatie, SC — supporting your clients after the sale with trusted Home Watch and Lifestyle Concierge services, plus a Realtor Referral Program."/>
+<meta name="description" content="Local Luxe Concierge partners with Realtors in Bluffton, Hilton Head, Beaufort, and Okatie, SC — giving your buyers peace of mind after closing with trusted Home Watch and Lifestyle Concierge services, plus a Realtor Referral Program."/>
 <link rel="stylesheet" href="styles.css"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Raleway:wght@300;400;500;600;700&family=Allura&display=swap" rel="stylesheet"/>
+<style>
+  .rp-wrap { max-width: 1140px; margin: 0 auto; }
+  .rp-hero { background: #f5f6f7; padding: 64px 40px 48px; }
+  .rp-eyebrow { color: #16477C; font-weight: 700; font-size: 15px; letter-spacing: 0.02em; margin-bottom: 12px; }
+  .rp-h1 { font-family: 'Playfair Display', serif; font-size: 46px; line-height: 1.12; color: #16477C; font-weight: 700; margin-bottom: 22px; }
+  .rp-lead { max-width: 760px; font-size: 17px; color: #555; line-height: 1.7; margin-bottom: 26px; }
+  .rp-textlink { color: #16477C; font-weight: 700; font-size: 16px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: gap 0.2s; }
+  .rp-textlink:hover { gap: 16px; }
+
+  .rp-section { padding: 56px 40px; }
+  .rp-h2 { font-family: 'Playfair Display', serif; font-size: 32px; color: #16477C; font-weight: 700; margin-bottom: 18px; }
+  .rp-p { font-size: 16px; color: #555; line-height: 1.78; margin-bottom: 16px; }
+  .rp-p:last-child { margin-bottom: 0; }
+
+  /* Feature: image + colored box, text slides in on scroll */
+  .rp-feature-grid { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; border-radius: 4px; overflow: hidden; }
+  .rp-feature-grid.blue { background: #d9e8f1; }
+  .rp-feature-grid.navy { background: #16477C; }
+  .rp-feature-img { min-height: 440px; background-size: cover; background-position: center; }
+  .rp-feature-body { padding: 56px 52px; }
+  .rp-feature-grid.navy .rp-h2, .rp-feature-grid.navy .rp-p { color: #fff; }
+
+  .rp-mini-h { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: #16477C; margin: 30px 0 14px; }
+  .rp-feature-grid.navy .rp-mini-h { color: #fff; }
+  .rp-ul { margin: 0; padding-left: 20px; }
+  .rp-ul li { font-size: 15.5px; color: #555; line-height: 1.7; margin-bottom: 8px; }
+  .rp-feature-grid.navy .rp-ul li { color: #e8f0f7; }
+
+  /* Three support boxes */
+  .rp-boxes { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+  .rp-box { background: #eef1f3; padding: 36px 32px; }
+  .rp-box .rp-rule { width: 110px; height: 4px; background: #16477C; margin-bottom: 22px; }
+  .rp-box h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: #16477C; font-weight: 700; margin-bottom: 16px; }
+
+  /* Horizontal slide-in (driven by the site's existing .reveal observer) */
+  .reveal.rp-slide-right { transform: translateX(70px); }
+  .reveal.rp-slide-left { transform: translateX(-70px); }
+  .reveal.rp-slide-right.visible, .reveal.rp-slide-left.visible { transform: none; }
+
+  @media (max-width: 880px) {
+    .rp-feature-grid { grid-template-columns: 1fr; }
+    .rp-feature-grid.rev .rp-feature-img { order: -1; }
+    .rp-feature-img { min-height: 280px; }
+    .rp-feature-body { padding: 36px 28px; }
+    .rp-boxes { grid-template-columns: 1fr; gap: 24px; }
+    .rp-h1 { font-size: 34px; }
+    .reveal.rp-slide-right, .reveal.rp-slide-left { transform: translateY(28px); }
+  }
+</style>
 <link rel="icon" type="image/jpeg" href="https://static.wixstatic.com/media/6096ed_9cf87ba68a3e4e52b9d7f5e26542cd2c~mv2.jpg"/>
 </head>
 <body>
@@ -60,98 +109,122 @@
   </nav>
 </header>
 
-<!-- ============ PAGE HERO ============ -->
-<section class="page-hero">
-  <div class="page-hero-content">
-    <div class="page-hero-script">for realtors</div>
-    <h1>Realtor Partnerships</h1>
-    <p>A trusted local partner who cares for your clients long after the closing table — so your name stays top of mind.</p>
+<!-- ============ HERO ============ -->
+<section class="rp-hero">
+  <div class="rp-wrap">
+    <div class="rp-eyebrow">Help Your Clients Protect Their Coastal Investment</div>
+    <h1 class="rp-h1">Home Watch Services for Realtors</h1>
+    <p class="rp-lead">Partner with Local Luxe Concierge to give your buyers peace of mind after closing. Our professional Home Watch and concierge services help monitor and care for vacant and seasonal homes.</p>
+    <a href="/contact?source=realtors" class="rp-textlink">Partner With Us Today <span>&#10230;</span></a>
   </div>
 </section>
 
-<!-- ============ INTRO ============ -->
-<section class="intro-section">
-  <div class="container intro-grid">
-    <div class="intro-body">
-      <div class="script-label">why partner with us</div>
-      <h2>Your Clients in Trusted Hands</h2>
-      <p>The relationship you build with a client shouldn't end at the closing table. Local Luxe Concierge proudly partners with Realtors to support their clients long after the transaction is complete, providing trusted Home Watch and Lifestyle Concierge services that help homeowners enjoy greater peace of mind and confidence in their property.</p>
-      <p>Whether your client is a full-time resident, a seasonal homeowner, or a second-home owner, we serve as their reliable, on-the-ground partner throughout Bluffton, Hilton Head Island, Beaufort, Okatie, and the surrounding Lowcountry communities.</p>
-      <a href="/contact?source=realtors" class="btn btn-outline-white" style="border-color:#16477C;background:#16477C;color:#fff;margin-top:8px;">BECOME A PARTNER <span class="arrow-right">→</span></a>
-    </div>
-    <div class="intro-image">
-      <img src="https://static.wixstatic.com/media/b61df5_b1428bf971df4a35a9a2197bb99d7b71~mv2.jpeg" alt="A welcoming Lowcountry home"/>
+<!-- ============ ADD VALUE (image left, blue box right) ============ -->
+<section class="rp-section" style="background:#f5f6f7;">
+  <div class="rp-feature-grid blue">
+    <!-- IMAGE SWAP: a house / keys photo works well here -->
+    <div class="rp-feature-img" style="background-image:url('https://static.wixstatic.com/media/b61df5_b1428bf971df4a35a9a2197bb99d7b71~mv2.jpeg');"></div>
+    <div class="rp-feature-body reveal rp-slide-right">
+      <h2 class="rp-h2">Add Value for Your Clients</h2>
+      <p class="rp-p">At Local Luxe Concierge, we partner with real estate professionals to help provide their clients with an extra layer of care, security, and peace of mind after the closing.</p>
+      <p class="rp-p">Many buyers in the Lowcountry purchase second homes, vacation properties, or investment properties that may sit vacant for extended periods of time. A professional Home Watch service ensures those homes are regularly checked, maintained, and protected.</p>
+      <p class="rp-p">By referring your clients to Local Luxe Concierge, you're giving them a trusted resource that helps safeguard their new investment long after the transaction is complete.</p>
     </div>
   </div>
 </section>
 
-<!-- ============ HOW WE HELP ============ -->
-<section class="services-section" style="background:#f5f3ee;">
-  <div class="container">
-    <div class="section-header">
-      <div class="script-label" style="text-align:center;">how we help</div>
-      <h2>A Thoughtful Extension of Your Service</h2>
-      <p>Referring your clients to Local Luxe Concierge reflects well on you — and gives them the ongoing care that turns a transaction into a lasting relationship.</p>
+<!-- ============ HOW WE SUPPORT (intro + 3 boxes) ============ -->
+<section class="rp-section" style="background:#f5f6f7;">
+  <div class="rp-wrap">
+    <h2 class="rp-h2">How We Support Your Clients</h2>
+    <p class="rp-p" style="max-width:860px;margin-bottom:44px;">We assist with move-in coordination by meeting with movers, contractors, appliance deliveries, cable and internet installers, painters, and cleaning crews. Our team can recommend trusted local vendors, oversee scheduled work, and perform simple handyman tasks such as hanging curtains to help ensure the home does not appear vacant.</p>
+  </div>
+  <div class="rp-boxes">
+    <div class="rp-box reveal">
+      <div class="rp-rule"></div>
+      <h3>Property Protection</h3>
+      <ul class="rp-ul">
+        <li>Scheduled Home Watch inspections</li>
+        <li>Detailed reports with photos</li>
+        <li>Early detection of maintenance issues</li>
+      </ul>
     </div>
-    <div class="services-grid">
+    <div class="rp-box reveal">
+      <div class="rp-rule"></div>
+      <h3>Property Management Support</h3>
+      <ul class="rp-ul">
+        <li>Vendor and contractor coordination</li>
+        <li>Ongoing maintenance oversight</li>
+        <li>Storm preparation and response</li>
+      </ul>
+    </div>
+    <div class="rp-box reveal">
+      <div class="rp-rule"></div>
+      <h3>Client Convenience</h3>
+      <ul class="rp-ul">
+        <li>Pre-arrival home preparation</li>
+        <li>Move-in and move-out services</li>
+        <li>Concierge services tailored to their needs</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="32" height="32">
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
-          </svg>
-        </div>
-        <h3>The Perfect Closing Gift</h3>
-        <div class="service-rule"></div>
-        <p>Welcome your clients to their new home with the gift of peace of mind — professional Home Watch and concierge support from day one.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="32" height="32">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
-          </svg>
-        </div>
-        <h3>You Stay Top of Mind</h3>
-        <div class="service-rule"></div>
-        <p>We care for your clients year-round, keeping the experience you delivered alive — and keeping your name front and center for referrals and repeat business.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="32" height="32">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
-          </svg>
-        </div>
-        <h3>A Single, Trusted Contact</h3>
-        <div class="service-rule"></div>
-        <p>From vendor coordination to home preparation and routine inspections, your clients gain one dependable point of contact for their home and lifestyle needs.</p>
-      </div>
-
+<!-- ============ WHY REALTORS PARTNER (intro + image left, navy box right) ============ -->
+<section class="rp-section" style="background:#f5f6f7;">
+  <div class="rp-wrap">
+    <h2 class="rp-h2">Why Realtors Partner With Us</h2>
+    <p class="rp-p" style="max-width:860px;margin-bottom:40px;">Our goal is simple — help your clients protect their investment while making you look great for connecting them with a reliable local resource.</p>
+  </div>
+  <div class="rp-feature-grid navy">
+    <!-- IMAGE SWAP -->
+    <div class="rp-feature-img" style="background-image:url('https://static.wixstatic.com/media/6096ed_eac6080140c34ea495ce68f9d61cf2ae~mv2.jpg');"></div>
+    <div class="rp-feature-body reveal rp-slide-right">
+      <p class="rp-p" style="font-weight:600;">Working with Local Luxe Concierge helps you:</p>
+      <ul class="rp-ul">
+        <li>Provide added value and peace of mind to your buyers</li>
+        <li>Build long-term relationships with your clients</li>
+        <li>Ensure vacant homes are properly monitored and maintained</li>
+        <li>Have a trusted local partner when clients are out of town</li>
+      </ul>
+      <div class="rp-mini-h">Ideal Clients for Home Watch</div>
+      <p class="rp-p">Your clients benefit most from our services if they:</p>
+      <ul class="rp-ul">
+        <li>Own a second home</li>
+        <li>Have a vacation property</li>
+        <li>Live out of state</li>
+        <li>Rent their home seasonally</li>
+        <li>Are not occupying the property full-time</li>
+      </ul>
     </div>
   </div>
 </section>
 
 <!-- ============ REFERRAL PROGRAM ============ -->
-<section style="background:#fff;padding:84px 40px;text-align:center;">
-  <div style="max-width:760px;margin:0 auto;">
-    <div class="script-label" style="text-align:center;">thank you</div>
-    <h2 style="font-family:'Playfair Display',serif;font-size:34px;font-weight:400;color:#16477C;margin-bottom:18px;">Realtor Referral Program</h2>
-    <p style="font-size:16px;color:#555;line-height:1.85;margin-bottom:18px;">We offer a Realtor Referral Program as a way to thank our trusted Realtor partners for introducing clients to our Home Watch and Lifestyle Concierge services.</p>
-    <p style="font-size:16px;color:#555;line-height:1.85;margin-bottom:34px;">Reach out and we'll share the details about our referral opportunities and how a partnership can work for you and your clients.</p>
-    <a href="/contact?source=realtors" class="btn btn-outline-navy-large">CONTACT US</a>
+<section class="rp-section" style="background:#f5f6f7;">
+  <div class="rp-wrap">
+    <h2 class="rp-h2">Realtor Referral Program</h2>
+    <p class="rp-p" style="max-width:900px;">We appreciate the trust realtors place in us when referring their clients. Local Luxe Concierge offers a Realtor Referral Program designed to thank our partners for connecting homeowners with our services.</p>
+    <p class="rp-p" style="max-width:900px;">If you're a realtor in the Lowcountry or surrounding areas, we'd love to connect and discuss how we can work together.</p>
   </div>
 </section>
 
-<!-- ============ GET STARTED BANNER ============ -->
-<section class="get-started-banner">
-  <div class="container gs-grid">
-    <div class="gs-text">
-      <div class="script-label-gold">let's partner</div>
-      <h2>Let's work together.</h2>
-      <p>Ready to give your clients the gift of peace of mind? Reach out today and let's build a partnership that serves them well — and reflects well on you.</p>
+<!-- ============ LET'S WORK TOGETHER (blue box left, image right) ============ -->
+<section class="rp-section" style="background:#f5f6f7;">
+  <div class="rp-feature-grid blue rev">
+    <div class="rp-feature-body reveal rp-slide-left">
+      <h2 class="rp-h2">Let's Work Together</h2>
+      <p class="rp-p" style="margin-bottom:34px;">Help your clients protect their investment long after closing.</p>
+      <div style="font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#16477C;margin-bottom:4px;">Request a Consultation</div>
+      <p style="font-family:'Playfair Display',serif;font-size:24px;color:#16477C;margin:0 0 22px;"><a href="tel:+18433382851" style="color:#16477C;text-decoration:none;">Call 843.338.2851</a></p>
+      <div style="font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#16477C;margin-bottom:4px;">Hours of Operation</div>
+      <p style="font-family:'Playfair Display',serif;font-size:20px;color:#16477C;margin:0 0 22px;">Monday – Friday, 9:00 AM – 5:00 PM</p>
+      <div style="font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#16477C;margin-bottom:4px;">Email Us At</div>
+      <p style="font-family:'Playfair Display',serif;font-size:18px;color:#16477C;margin:0 0 30px;"><a href="mailto:localluxeconcierge@gmail.com" style="color:#16477C;text-decoration:none;">localluxeconcierge@gmail.com</a></p>
+      <a href="/contact?source=realtors" class="btn btn-outline-navy-large">CONTACT US</a>
     </div>
-    <a href="/contact?source=realtors" class="btn btn-outline-white-large">CONTACT US</a>
+    <!-- IMAGE SWAP -->
+    <div class="rp-feature-img" style="background-image:url('https://static.wixstatic.com/media/6096ed_593a1bf33aee41af901fdf87e94eb7a0~mv2.jpg');"></div>
   </div>
 </section>
 
