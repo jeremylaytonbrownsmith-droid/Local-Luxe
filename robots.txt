@@ -1,4 +1,2 @@
 User-agent: *
-Allow: /
-
-Sitemap: https://localluxeconcierge.com/sitemap.xml
+Disallow: /
