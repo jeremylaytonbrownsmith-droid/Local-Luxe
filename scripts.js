@@ -37,7 +37,8 @@
       '</div>' +
       '<div class="form-success-script">thank you</div>' +
       '<h3 class="form-success-title">Your message has been sent</h3>' +
-      '<p class="form-success-text">Thank you for reaching out to Local Luxe Concierge. We’ve received your inquiry and a member of our team will be in touch with you shortly.</p>';
+      '<p class="form-success-text">Thank you for reaching out to Local Luxe Concierge. We’ve received your inquiry and a member of our team will be in touch with you shortly.</p>' +
+      '<p class="form-success-phone">Prefer to talk now? Call <a href="tel:+18433382851">843.338.2851</a></p>';
     return wrap;
   }
 
@@ -70,7 +71,13 @@
           form.parentNode.insertBefore(success, form);
           form.style.display = 'none';
           var grid = form.closest('.contact-grid');
-          if (grid) { grid.classList.add('contact-grid--sent'); }
+          if (grid) {
+            grid.classList.add('contact-grid--sent');
+            // Hide the now-redundant "Ready to Enjoy Peace of Mind?" heading
+            var sec = grid.closest('section');
+            var hdr = sec ? sec.querySelector('.section-header') : null;
+            if (hdr) { hdr.style.display = 'none'; }
+          }
           success.scrollIntoView({ behavior: 'smooth', block: 'center' });
         } else {
           showFormError(form, btn, originalText);

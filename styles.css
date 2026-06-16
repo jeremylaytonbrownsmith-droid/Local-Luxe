@@ -716,13 +716,27 @@ a { color: inherit; text-decoration: none; }
 }
 .form-error a { color: #a3271b; text-decoration: underline; }
 
-/* When a form sends, collapse the contact columns and center the thank-you */
-.contact-grid--sent { display: block; }
+/* When a form sends, collapse the contact columns and center the thank-you.
+   Note: .contact-grid.contact-grid--sent is needed to out-specify the later
+   `.contact-grid { display: grid }` rule below. */
+.contact-grid.contact-grid--sent { display: block; }
 .contact-grid--sent .contact-info-col { display: none; }
 .contact-grid--sent .form-success {
-  max-width: 560px;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+}
+.form-success-phone {
+  margin-top: 24px;
+  font-size: 15px;
+  color: #16477C;
+  font-weight: 600;
+}
+.form-success-phone a {
+  color: #c5a74e;
+  font-weight: 700;
+  border-bottom: 1px solid #c5a74e;
+  white-space: nowrap;
 }
 
 /* ============ CONTACT ============ */
