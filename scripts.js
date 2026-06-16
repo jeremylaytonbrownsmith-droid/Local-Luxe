@@ -69,6 +69,8 @@
           var success = buildFormSuccess();
           form.parentNode.insertBefore(success, form);
           form.style.display = 'none';
+          var grid = form.closest('.contact-grid');
+          if (grid) { grid.classList.add('contact-grid--sent'); }
           success.scrollIntoView({ behavior: 'smooth', block: 'center' });
         } else {
           showFormError(form, btn, originalText);

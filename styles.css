@@ -716,6 +716,15 @@ a { color: inherit; text-decoration: none; }
 }
 .form-error a { color: #a3271b; text-decoration: underline; }
 
+/* When a form sends, collapse the contact columns and center the thank-you */
+.contact-grid--sent { display: block; }
+.contact-grid--sent .contact-info-col { display: none; }
+.contact-grid--sent .form-success {
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ============ CONTACT ============ */
 .contact-section {
   padding: 80px 0;
