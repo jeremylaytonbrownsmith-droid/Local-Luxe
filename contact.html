@@ -353,15 +353,15 @@ function switchContactForm(type) {
 
 (function () {
   var planLabels = {
-    'weekly-sm':    'Weekly Plan — Homes up to 2,500 sq. ft. ($60/visit)',
-    'bimonthly-sm': 'Bi-Monthly Plan — Homes up to 2,500 sq. ft. ($80/visit)',
-    'monthly-sm':   'Monthly Plan — Homes up to 2,500 sq. ft. ($120/visit)',
-    'weekly-md':    'Weekly Plan — Homes 2,501–4,000 sq. ft. ($80/visit)',
-    'bimonthly-md': 'Bi-Monthly Plan — Homes 2,501–4,000 sq. ft. ($110/visit)',
-    'monthly-md':   'Monthly Plan — Homes 2,501–4,000 sq. ft. ($140/visit)',
-    'weekly-lg':    'Weekly Plan — Homes 4,000+ sq. ft. ($100/visit)',
-    'bimonthly-lg': 'Bi-Monthly Plan — Homes 4,000+ sq. ft. ($120/visit)',
-    'monthly-lg':   'Monthly Plan — Homes 4,000+ sq. ft. ($160/visit)'
+    'weekly-sm':    'Weekly Plan — Homes up to 2,500 sq. ft.',
+    'bimonthly-sm': 'Twice Monthly Plan — Homes up to 2,500 sq. ft.',
+    'monthly-sm':   'Monthly Plan — Homes up to 2,500 sq. ft.',
+    'weekly-md':    'Weekly Plan — Homes 2,501–4,000 sq. ft.',
+    'bimonthly-md': 'Twice Monthly Plan — Homes 2,501–4,000 sq. ft.',
+    'monthly-md':   'Monthly Plan — Homes 2,501–4,000 sq. ft.',
+    'weekly-lg':    'Weekly Plan — Homes 4,001–6,000 sq. ft.',
+    'bimonthly-lg': 'Twice Monthly Plan — Homes 4,001–6,000 sq. ft.',
+    'monthly-lg':   'Monthly Plan — Homes 4,001–6,000 sq. ft.'
   };
   var params = new URLSearchParams(window.location.search);
   var plan   = params.get('plan');
